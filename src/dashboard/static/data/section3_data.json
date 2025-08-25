@@ -1,0 +1,102 @@
+{
+  "states_ranking": {
+    "states": [
+      "CA",
+      "TX",
+      "FL",
+      "NY",
+      "IL",
+      "PA",
+      "OH",
+      "GA",
+      "NC",
+      "MI"
+    ],
+    "weights_tons": [
+      2456.8,
+      1987.3,
+      1654.2,
+      1423.7,
+      1298.4,
+      1156.9,
+      1034.2,
+      923.8,
+      834.5,
+      756.3
+    ],
+    "weights_lbs": [
+      5420000,
+      4380000,
+      3650000,
+      3140000,
+      2860000,
+      2550000,
+      2280000,
+      2040000,
+      1840000,
+      1670000
+    ]
+  },
+  "sankey": {
+    "labels": [
+      "Kroger Co.",
+      "Walmart Inc.",
+      "Amazon.com",
+      "Target Corp.",
+      "Costco",
+      "DRY Storage",
+      "REFRIGERATED Storage",
+      "FROZEN Storage",
+      "Food Bank Network",
+      "Regional Distribution",
+      "Local Charities",
+      "Emergency Relief"
+    ],
+    "sources": [
+      0,
+      0,
+      1,
+      1,
+      2,
+      3,
+      4,
+      5,
+      5,
+      6,
+      6,
+      7,
+      7
+    ],
+    "targets": [
+      5,
+      6,
+      5,
+      7,
+      6,
+      8,
+      9,
+      9,
+      10,
+      10,
+      11,
+      8,
+      11
+    ],
+    "values": [
+      2750,
+      1980,
+      2420,
+      1320,
+      1650,
+      1980,
+      2200,
+      1320,
+      1650,
+      1760,
+      1210,
+      880,
+      990
+    ]
+  },
+  "generated_at": "2025-08-21T17:22:46.973286"
+}

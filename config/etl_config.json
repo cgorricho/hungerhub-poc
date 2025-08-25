@@ -1,0 +1,76 @@
+{
+  "databases": {
+    "choice": {
+      "name": "Choice",
+      "priority_tables": [
+        "dbo.Clients",
+        "dbo.Services",
+        "dbo.FoodInventory"
+      ]
+    },
+    "agency_express": {
+      "name": "AgencyExpress",
+      "priority_tables": [
+        "dbo.Participants",
+        "dbo.ProgramAssistance",
+        "dbo.Agencies"
+      ]
+    }
+  },
+  "etl_settings": {
+    "batch_size": 1000,
+    "data_retention_days": 90,
+    "enable_data_validation": true,
+    "output_formats": [
+      "csv",
+      "parquet"
+    ],
+    "enable_incremental_load": true
+  },
+  "transformation_rules": {
+    "standardize_names": true,
+    "normalize_addresses": true,
+    "calculate_demographics": true,
+    "generate_food_metrics": true
+  },
+  "data_quality": {
+    "required_fields": {
+      "client_data": [
+        "id",
+        "first_name",
+        "last_name"
+      ],
+      "service_data": [
+        "id",
+        "client_id",
+        "service_date",
+        "service_type"
+      ],
+      "participant_data": [
+        "id",
+        "first_name",
+        "last_name",
+        "enrollment_date"
+      ]
+    },
+    "data_types": {
+      "dates": [
+        "service_date",
+        "enrollment_date",
+        "dob",
+        "created_date"
+      ],
+      "numeric": [
+        "household_size",
+        "food_pounds",
+        "benefit_amount"
+      ],
+      "categorical": [
+        "service_type",
+        "program_type",
+        "gender",
+        "state"
+      ]
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "extraction_type": "medium_priority",
+  "extraction_method": "sequential_optimal",
+  "start_time": "2025-08-14T00:05:55.434963",
+  "end_time": "2025-08-14T00:15:23.624317",
+  "duration_seconds": 568.1883890628815,
+  "duration_minutes": 9.469806484381358,
+  "total_rows": 698948,
+  "successful_tables": 7,
+  "failed_tables": 0,
+  "overall_throughput": 1230.1342538040624,
+  "extraction_results": [
+    {
+      "table_name": "AMX_OFFER_HEADER",
+      "full_name": "RWTXN_46.AMX_OFFER_HEADER",
+      "rows_extracted": 26343,
+      "expected_rows": 26343,
+      "columns": 46,
+      "duration_seconds": 44.2,
+      "throughput_rows_per_sec": 595.9,
+      "memory_usage_mb": 58.64,
+      "file_size_mb": 14.11,
+      "saved_files": [
+        "data/raw/oracle/AMX_OFFER_HEADER.csv",
+        "data/processed/real/AMX_OFFER_HEADER.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-14T00:06:40.107061"
+    },
+    {
+      "table_name": "AMX_OFFER_LINES",
+      "full_name": "RWTXN_46.AMX_OFFER_LINES",
+      "rows_extracted": 91783,
+      "expected_rows": 91783,
+      "columns": 32,
+      "duration_seconds": 73.92,
+      "throughput_rows_per_sec": 1241.6,
+      "memory_usage_mb": 88.74,
+      "file_size_mb": 17.77,
+      "saved_files": [
+        "data/raw/oracle/AMX_OFFER_LINES.csv",
+        "data/processed/real/AMX_OFFER_LINES.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-14T00:07:54.799511"
+    },
+    {
+      "table_name": "RW_ORG",
+      "full_name": "RWTXN_46.RW_ORG",
+      "rows_extracted": 630,
+      "expected_rows": 630,
+      "columns": 44,
+      "duration_seconds": 1.53,
+      "throughput_rows_per_sec": 411.7,
+      "memory_usage_mb": 0.91,
+      "file_size_mb": 0.22,
+      "saved_files": [
+        "data/raw/oracle/RW_ORG.csv",
+        "data/processed/real/RW_ORG.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-14T00:07:56.390073"
+    },
+    {
+      "table_name": "ACACTION",
+      "full_name": "RWTXN_46.ACACTION",
+      "rows_extracted": 0,
+      "expected_rows": 5000,
+      "columns": 1,
+      "duration_seconds": 0.94,
+      "throughput_rows_per_sec": 0.0,
+      "memory_usage_mb": 0.0,
+      "file_size_mb": 0.0,
+      "saved_files": [
+        "data/raw/oracle/ACACTION.csv",
+        "data/processed/real/ACACTION.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-14T00:07:57.351821"
+    },
+    {
+      "table_name": "ACBIDS_ARCHIVE",
+      "full_name": "RWTXN_46.ACBIDS_ARCHIVE",
+      "rows_extracted": 1108,
+      "expected_rows": 20000,
+      "columns": 26,
+      "duration_seconds": 2.16,
+      "throughput_rows_per_sec": 513.1,
+      "memory_usage_mb": 0.61,
+      "file_size_mb": 0.22,
+      "saved_files": [
+        "data/raw/oracle/ACBIDS_ARCHIVE.csv",
+        "data/processed/real/ACBIDS_ARCHIVE.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-14T00:07:59.549342"
+    },
+    {
+      "table_name": "ACSHARES_ARCHIVE",
+      "full_name": "RWTXN_46.ACSHARES_ARCHIVE",
+      "rows_extracted": 573114,
+      "expected_rows": 15000,
+      "columns": 19,
+      "duration_seconds": 435.44,
+      "throughput_rows_per_sec": 1316.2,
+      "memory_usage_mb": 212.27,
+      "file_size_mb": 67.26,
+      "saved_files": [
+        "data/raw/oracle/ACSHARES_ARCHIVE.csv",
+        "data/processed/real/ACSHARES_ARCHIVE.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-14T00:15:18.225117"
+    },
+    {
+      "table_name": "RW_USER",
+      "full_name": "RWTXN_46.RW_USER",
+      "rows_extracted": 5970,
+      "expected_rows": 5970,
+      "columns": 37,
+      "duration_seconds": 5.24,
+      "throughput_rows_per_sec": 1138.6,
+      "memory_usage_mb": 6.95,
+      "file_size_mb": 1.85,
+      "saved_files": [
+        "data/raw/oracle/RW_USER.csv",
+        "data/processed/real/RW_USER.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-14T00:15:23.604694"
+    }
+  ]
+}

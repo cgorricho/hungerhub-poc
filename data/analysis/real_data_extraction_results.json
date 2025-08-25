@@ -1,0 +1,42 @@
+{
+  "timestamp": "2025-08-07T20:01:46.086686",
+  "total_records_extracted": 26500,
+  "successful_extracts": 8,
+  "failed_extracts": 0,
+  "categories": {
+    "donations": {
+      "tables_extracted": 2,
+      "total_rows": 6000,
+      "files_created": [
+        "data/raw/oracle/choice_AMX_DONATION_HEADER_sample.csv",
+        "data/processed/real/choice_AMX_DONATION_HEADER_sample.parquet",
+        "data/raw/oracle/choice_AMX_DONATION_LINES_sample.csv",
+        "data/processed/real/choice_AMX_DONATION_LINES_sample.parquet"
+      ]
+    },
+    "orders": {
+      "tables_extracted": 4,
+      "total_rows": 18000,
+      "files_created": [
+        "data/raw/oracle/choice_DOCUMENTHEADER_sample.csv",
+        "data/processed/real/choice_DOCUMENTHEADER_sample.parquet",
+        "data/raw/oracle/choice_DOCUMENTLINES_sample.csv",
+        "data/processed/real/choice_DOCUMENTLINES_sample.parquet",
+        "data/raw/oracle/agency_DOCUMENTHEADER_sample.csv",
+        "data/processed/real/agency_DOCUMENTHEADER_sample.parquet",
+        "data/raw/oracle/agency_DOCUMENTLINES_sample.csv",
+        "data/processed/real/agency_DOCUMENTLINES_sample.parquet"
+      ]
+    },
+    "organizations": {
+      "tables_extracted": 2,
+      "total_rows": 2500,
+      "files_created": [
+        "data/raw/oracle/choice_RW_ORG_sample.csv",
+        "data/processed/real/choice_RW_ORG_sample.parquet",
+        "data/raw/oracle/agency_RW_ORG_sample.csv",
+        "data/processed/real/agency_RW_ORG_sample.parquet"
+      ]
+    }
+  }
+}

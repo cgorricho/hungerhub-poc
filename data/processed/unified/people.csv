@@ -1,0 +1,36 @@
+person_id,full_name,firstname,lastname,age,phone,email,city,state,zipcode,householdsize,data_source,gender,income_level_numeric,unified_person_id
+1,Jennifer Williams,Jennifer,Williams,51,5556092,person1@email.com,Madison,TX,92926,5,Choice,Unknown,,1
+2,Maria Miller,Maria,Miller,40,5553939,person2@email.com,Riverside,AZ,17791,1,Choice,Unknown,,2
+3,John Davis,John,Davis,30,5558034,person3@email.com,Franklin,AZ,24420,2,Choice,Unknown,,3
+4,Sarah Wilson,Sarah,Wilson,26,5556932,person4@email.com,Lakewood,CA,18380,1,Choice,Unknown,,4
+5,Maria Williams,Maria,Williams,41,5559319,person5@email.com,Riverside,PA,76212,1,Choice,Unknown,,5
+6,David Garcia,David,Garcia,69,5555617,person6@email.com,Franklin,CA,61960,1,Choice,Unknown,,6
+7,Maria Miller,Maria,Miller,51,5553908,person7@email.com,Franklin,WI,49519,4,Choice,Unknown,,7
+8,Lisa Miller,Lisa,Miller,39,5556337,person8@email.com,Madison,IL,96595,3,Choice,Unknown,,8
+9,Lisa Smith,Lisa,Smith,55,5556228,person9@email.com,Springfield,IL,95593,1,Choice,Unknown,,9
+10,Sarah Garcia,Sarah,Garcia,34,5551828,person10@email.com,Madison,AZ,90886,7,Choice,Unknown,,10
+11,Sarah Garcia,Sarah,Garcia,28,5556454,person11@email.com,Franklin,PA,32506,4,Choice,Unknown,,11
+12,Jennifer Miller,Jennifer,Miller,38,5558181,person12@email.com,Springfield,AZ,93313,1,Choice,Unknown,,12
+13,Sarah Miller,Sarah,Miller,58,5554650,person13@email.com,Madison,TX,85594,2,Choice,Unknown,,13
+14,Jennifer Brown,Jennifer,Brown,52,5551646,person14@email.com,Riverside,WI,42478,1,Choice,Unknown,,14
+15,John Miller,John,Miller,27,5555289,person15@email.com,Madison,TN,19908,2,Choice,Unknown,,15
+1001,Sarah Anderson,Sarah,Anderson,29,5555839,participant1001@email.com,Chicago,IL,12754,3,AgencyExpress,M,3.0,16
+1002,William Davis,William,Davis,48,5554142,participant1002@email.com,Philadelphia,PA,93104,4,AgencyExpress,M,2.0,17
+1003,Sarah Wilson,Sarah,Wilson,42,5559561,participant1003@email.com,San Antonio,NY,19667,3,AgencyExpress,M,1.0,18
+1004,Emily Wilson,Emily,Wilson,44,5555232,participant1004@email.com,Phoenix,PA,29770,3,AgencyExpress,M,3.0,19
+1005,Ashley Moore,Ashley,Moore,47,5551607,participant1005@email.com,San Antonio,NY,69666,1,AgencyExpress,F,2.0,20
+1006,Sarah Wilson,Sarah,Wilson,20,5552875,participant1006@email.com,Philadelphia,IL,99346,3,AgencyExpress,M,1.0,21
+1007,Emily Davis,Emily,Davis,71,5556436,participant1007@email.com,Phoenix,NY,47294,2,AgencyExpress,F,1.0,22
+1008,Ashley Miller,Ashley,Miller,57,5557113,participant1008@email.com,Philadelphia,AZ,67518,2,AgencyExpress,M,3.0,23
+1009,Michael Wilson,Michael,Wilson,21,5556046,participant1009@email.com,Phoenix,PA,35031,3,AgencyExpress,M,1.0,24
+1010,Emily Moore,Emily,Moore,32,5559422,participant1010@email.com,Chicago,TX,30973,2,AgencyExpress,F,2.0,25
+1011,Sarah Wilson,Sarah,Wilson,60,5551672,participant1011@email.com,San Antonio,TX,14989,2,AgencyExpress,F,3.0,26
+1012,William Thomas,William,Thomas,53,5554915,participant1012@email.com,Houston,IL,14163,3,AgencyExpress,M,2.0,27
+1013,William Thomas,William,Thomas,69,5557893,participant1013@email.com,Philadelphia,AZ,47667,2,AgencyExpress,M,2.0,28
+1014,Jennifer Miller,Jennifer,Miller,46,5553102,participant1014@email.com,San Antonio,NY,63671,3,AgencyExpress,M,2.0,29
+1015,Daniel Moore,Daniel,Moore,63,5551973,participant1015@email.com,San Antonio,NY,60965,3,AgencyExpress,M,3.0,30
+1016,Jennifer Miller,Jennifer,Miller,37,5553016,participant1016@email.com,Houston,TX,19729,2,AgencyExpress,M,2.0,31
+1017,Sarah Thomas,Sarah,Thomas,36,5555288,participant1017@email.com,Chicago,NY,98207,1,AgencyExpress,M,2.0,32
+1018,Ashley Davis,Ashley,Davis,48,5558730,participant1018@email.com,Chicago,TX,93340,4,AgencyExpress,M,1.0,33
+1019,Sarah Moore,Sarah,Moore,23,5557306,participant1019@email.com,Houston,AZ,49568,4,AgencyExpress,M,3.0,34
+1020,Ashley Moore,Ashley,Moore,51,5552668,participant1020@email.com,Philadelphia,TX,64084,4,AgencyExpress,M,1.0,35

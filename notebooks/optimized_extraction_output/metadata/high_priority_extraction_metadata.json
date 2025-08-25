@@ -1,0 +1,99 @@
+{
+  "extraction_type": "high_priority_tables",
+  "extraction_method": "sequential_optimal",
+  "start_time": "2025-08-09T21:43:41.964558",
+  "end_time": "2025-08-09T21:50:33.950612",
+  "duration_seconds": 411.98518800735474,
+  "duration_minutes": 6.866419800122579,
+  "total_rows": 451874,
+  "successful_tables": 5,
+  "failed_tables": 0,
+  "overall_throughput": 1096.8209856902263,
+  "extraction_results": [
+    {
+      "table_name": "AMX_DONATION_LINES",
+      "full_name": "RWTXN_46.AMX_DONATION_LINES",
+      "rows_extracted": 27099,
+      "expected_rows": 27099,
+      "columns": 26,
+      "duration_seconds": 26.94,
+      "throughput_rows_per_sec": 1005.7,
+      "memory_usage_mb": 25.25,
+      "file_size_mb": 5.15,
+      "saved_files": [
+        "optimized_extraction_output/csv/AMX_DONATION_LINES.csv",
+        "optimized_extraction_output/parquet/AMX_DONATION_LINES.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-09T21:44:09.466786"
+    },
+    {
+      "table_name": "AMX_DONATION_HEADER",
+      "full_name": "RWTXN_46.AMX_DONATION_HEADER",
+      "rows_extracted": 1389,
+      "expected_rows": 1389,
+      "columns": 30,
+      "duration_seconds": 3.34,
+      "throughput_rows_per_sec": 415.6,
+      "memory_usage_mb": 2.14,
+      "file_size_mb": 0.67,
+      "saved_files": [
+        "optimized_extraction_output/csv/AMX_DONATION_HEADER.csv",
+        "optimized_extraction_output/parquet/AMX_DONATION_HEADER.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-09T21:44:12.935540"
+    },
+    {
+      "table_name": "RW_ORDER_ITEM",
+      "full_name": "RWTXN_46.RW_ORDER_ITEM",
+      "rows_extracted": 230282,
+      "expected_rows": 230282,
+      "columns": 75,
+      "duration_seconds": 202.09,
+      "throughput_rows_per_sec": 1139.5,
+      "memory_usage_mb": 426.39,
+      "file_size_mb": 65.51,
+      "saved_files": [
+        "optimized_extraction_output/csv/RW_ORDER_ITEM.csv",
+        "optimized_extraction_output/parquet/RW_ORDER_ITEM.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-09T21:47:43.171192"
+    },
+    {
+      "table_name": "RW_ORDER_SUPPLIER",
+      "full_name": "RWTXN_46.RW_ORDER_SUPPLIER",
+      "rows_extracted": 96552,
+      "expected_rows": 96552,
+      "columns": 7,
+      "duration_seconds": 82.8,
+      "throughput_rows_per_sec": 1166.1,
+      "memory_usage_mb": 24.38,
+      "file_size_mb": 6.52,
+      "saved_files": [
+        "optimized_extraction_output/csv/RW_ORDER_SUPPLIER.csv",
+        "optimized_extraction_output/parquet/RW_ORDER_SUPPLIER.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-09T21:49:06.647213"
+    },
+    {
+      "table_name": "RW_PURCHASE_ORDER",
+      "full_name": "RWTXN_46.RW_PURCHASE_ORDER",
+      "rows_extracted": 96552,
+      "expected_rows": 96552,
+      "columns": 51,
+      "duration_seconds": 84.61,
+      "throughput_rows_per_sec": 1141.1,
+      "memory_usage_mb": 126.1,
+      "file_size_mb": 23.68,
+      "saved_files": [
+        "optimized_extraction_output/csv/RW_PURCHASE_ORDER.csv",
+        "optimized_extraction_output/parquet/RW_PURCHASE_ORDER.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-09T21:50:33.825425"
+    }
+  ]
+}

@@ -1,0 +1,447 @@
+#!/usr/bin/env python3
+"""
+HungerHub POC - Plotly Dash Dashboard Application
+Oracle → Python → Plotly Dash (As per original POC specification)
+
+3-Page Dashboard:
+1. Executive Summary (KPIs + trends)
+2. Donation Analytics (donors + geographic)
+3. Agency Operations (orders + fulfillment)
+"""
+
+import dash
+from dash import dcc, html, Input, Output, callback
+import plotly.express as px
+import plotly.graph_objects as go
+import pandas as pd
+import numpy as np
+from datetime import datetime, timedelta
+import os
+import json
+
+# Initialize Dash app
+app = dash.Dash(__name__, suppress_callback_exceptions=True)
+app.title = "HungerHub Analytics POC"
+
+# Load real Oracle data
+def load_real_data():
+    """Load the real Oracle data we extracted"""
+    try:
+        # Load unified real data
+        donations_df = pd.read_csv('data/processed/unified_real/donations.csv')
+        donations_df['donation_date'] = pd.to_datetime(donations_df['donation_date'])
+        
+        organizations_df = pd.read_csv('data/processed/unified_real/organizations.csv')
+        organizations_df['created_time'] = pd.to_datetime(organizations_df['created_time'])
+        
+        # Load summary stats
+        with open('data/processed/unified_real/summary_stats.json', 'r') as f:
+            summary_stats = json.load(f)
+            
+        return donations_df, organizations_df, summary_stats
+        
+    except Exception as e:
+        print(f"Error loading real data: {e}")
+        # Return empty dataframes as fallback
+        return pd.DataFrame(), pd.DataFrame(), {}
+
+# Load data
+donations_df, organizations_df, summary_stats = load_real_data()
+
+# App layout with navigation
+app.layout = html.Div([
+    dcc.Location(id='url', refresh=False),
+    
+    # Header
+    html.Div([
+        html.H1("🍽️ HungerHub Analytics POC", 
+                style={'color': '#2E86AB', 'textAlign': 'center', 'marginBottom': '10px'}),
+        html.P("Oracle → Python → Plotly Dash Analytics Pipeline", 
+               style={'textAlign': 'center', 'color': '#666', 'fontSize': '16px'}),
+        html.Hr()
+    ], style={'backgroundColor': '#f8f9fa', 'padding': '20px', 'marginBottom': '20px'}),
+    
+    # Navigation
+    html.Div([
+        dcc.Tabs(id="tabs", value='executive', children=[
+            dcc.Tab(label='📊 Executive Summary', value='executive'),
+            dcc.Tab(label='💰 Donation Analytics', value='donations'),
+            dcc.Tab(label='🏢 Agency Operations', value='operations')
+        ])
+    ], style={'marginBottom': '20px'}),
+    
+    # Page content
+    html.Div(id='page-content'),
+    
+    # Footer
+    html.Div([
+        html.Hr(),
+        html.P([
+            f"Data Source: Real Oracle Data | Last Updated: {datetime.now().strftime('%Y-%m-%d %H:%M')} | ",
+            f"Records: {len(donations_df):,} donations, {len(organizations_df):,} organizations"
+        ], style={'textAlign': 'center', 'color': '#999', 'fontSize': '12px'})
+    ])
+])
+
+# Page 1: Executive Summary
+def create_executive_summary():
+    """Executive Summary page with KPIs and trends"""
+    
+    if len(donations_df) == 0:
+        return html.Div([
+            html.H2("Executive Summary"),
+            html.Div("⚠️ No data available. Please run data extraction process.", 
+                    style={'padding': '20px', 'backgroundColor': '#fff3cd', 'border': '1px solid #ffeaa7'})
+        ])
+    
+    # Calculate KPIs
+    total_donations = len(donations_df)
+    total_donors = donations_df['donor_id'].nunique()
+    total_organizations = len(organizations_df)
+    
+    # Date range
+    min_date = donations_df['donation_date'].min()
+    max_date = donations_df['donation_date'].max()
+    
+    # Monthly trends
+    monthly_donations = donations_df.groupby(donations_df['donation_date'].dt.to_period('M')).size().reset_index()
+    monthly_donations['month_str'] = monthly_donations['donation_date'].astype(str)
+    
+    # Top donors
+    top_donors = donations_df['donor_name'].value_counts().head(10)
+    
+    # Geographic distribution (by organization location - approximate)
+    org_distribution = organizations_df['data_source'].value_counts()
+    
+    return html.Div([
+        # KPI Cards
+        html.H2("📊 Executive Summary"),
+        html.Div([
+            html.Div([
+                html.H3(f"{total_donations:,}", style={'color': '#2E86AB', 'marginBottom': '5px'}),
+                html.P("Total Donations", style={'margin': '0'})
+            ], className='kpi-card', style={'textAlign': 'center', 'padding': '20px', 'backgroundColor': '#e3f2fd', 'margin': '10px', 'borderRadius': '8px', 'flex': '1'}),
+            
+            html.Div([
+                html.H3(f"{total_donors:,}", style={'color': '#A23B72', 'marginBottom': '5px'}),
+                html.P("Unique Donors", style={'margin': '0'})
+            ], className='kpi-card', style={'textAlign': 'center', 'padding': '20px', 'backgroundColor': '#fce4ec', 'margin': '10px', 'borderRadius': '8px', 'flex': '1'}),
+            
+            html.Div([
+                html.H3(f"{total_organizations:,}", style={'color': '#F18F01', 'marginBottom': '5px'}),
+                html.P("Organizations", style={'margin': '0'})
+            ], className='kpi-card', style={'textAlign': 'center', 'padding': '20px', 'backgroundColor': '#fff3e0', 'margin': '10px', 'borderRadius': '8px', 'flex': '1'}),
+            
+        ], style={'display': 'flex', 'justifyContent': 'space-between'}),
+        
+        # Data Range Info
+        html.Div([
+            html.P(f"📅 Data Range: {min_date.strftime('%Y-%m-%d')} to {max_date.strftime('%Y-%m-%d')}", 
+                  style={'textAlign': 'center', 'color': '#666', 'backgroundColor': '#f5f5f5', 'padding': '10px', 'borderRadius': '5px'})
+        ], style={'margin': '20px 0'}),
+        
+        # Charts Row
+        html.Div([
+            # Monthly Trend Chart
+            html.Div([
+                html.H4("📈 Monthly Donation Trends"),
+                dcc.Graph(
+                    figure=px.line(
+                        monthly_donations, 
+                        x='month_str', 
+                        y='donation_date',
+                        title="Monthly Donations Over Time",
+                        labels={'donation_date': 'Number of Donations', 'month_str': 'Month'}
+                    ).update_layout(showlegend=False)
+                )
+            ], style={'width': '50%', 'display': 'inline-block', 'padding': '0 10px'}),
+            
+            # Top Donors Chart
+            html.Div([
+                html.H4("🏆 Top 10 Donors"),
+                dcc.Graph(
+                    figure=px.bar(
+                        x=top_donors.values,
+                        y=top_donors.index,
+                        orientation='h',
+                        title="Most Active Donors",
+                        labels={'x': 'Number of Donations', 'y': 'Donor'}
+                    ).update_layout(showlegend=False, height=400)
+                )
+            ], style={'width': '50%', 'display': 'inline-block', 'padding': '0 10px'}),
+        ]),
+        
+        # System Distribution
+        html.Div([
+            html.H4("🌐 System Distribution"),
+            dcc.Graph(
+                figure=px.pie(
+                    values=org_distribution.values,
+                    names=org_distribution.index,
+                    title="Organizations by System",
+                    color_discrete_sequence=['#2E86AB', '#A23B72', '#F18F01']
+                ).update_layout(height=300)
+            )
+        ], style={'width': '50%', 'margin': '0 auto'})
+    ])
+
+# Page 2: Donation Analytics
+def create_donation_analytics():
+    """Donation Analytics page with donors and geographic analysis"""
+    
+    if len(donations_df) == 0:
+        return html.Div([
+            html.H2("Donation Analytics"),
+            html.Div("⚠️ No donation data available.", 
+                    style={'padding': '20px', 'backgroundColor': '#fff3cd'})
+        ])
+    
+    # Quarterly analysis
+    quarterly_donations = donations_df.groupby('quarter').agg({
+        'donation_id': 'count',
+        'quantity': 'sum'
+    }).reset_index()
+    quarterly_donations.columns = ['Quarter', 'Number of Donations', 'Total Quantity']
+    
+    # Day of week patterns
+    dow_donations = donations_df['day_of_week'].value_counts()
+    
+    # Item analysis
+    top_items = donations_df['item_description'].value_counts().head(15)
+    
+    # Donor performance
+    donor_summary = donations_df.groupby('donor_name').agg({
+        'donation_id': 'count',
+        'quantity': 'sum',
+        'donation_date': ['min', 'max']
+    }).reset_index()
+    donor_summary.columns = ['Donor', 'Total Donations', 'Total Quantity', 'First Donation', 'Last Donation']
+    donor_summary = donor_summary.sort_values('Total Donations', ascending=False).head(20)
+    
+    return html.Div([
+        html.H2("💰 Donation Analytics"),
+        
+        # Filters
+        html.Div([
+            html.Div([
+                html.Label("Filter by Year:"),
+                dcc.Dropdown(
+                    id='year-filter',
+                    options=[{'label': 'All Years', 'value': 'all'}] + 
+                           [{'label': str(year), 'value': year} for year in sorted(donations_df['year'].unique())],
+                    value='all'
+                )
+            ], style={'width': '30%', 'display': 'inline-block', 'marginRight': '20px'})
+        ], style={'marginBottom': '20px'}),
+        
+        # Quarterly Trends
+        html.Div([
+            html.H4("📊 Quarterly Performance"),
+            dcc.Graph(
+                figure=px.bar(
+                    quarterly_donations,
+                    x='Quarter',
+                    y='Number of Donations',
+                    title="Donations by Quarter",
+                    color='Number of Donations',
+                    color_continuous_scale='viridis'
+                )
+            )
+        ]),
+        
+        # Day of Week Analysis
+        html.Div([
+            html.Div([
+                html.H4("📅 Donation Patterns by Day"),
+                dcc.Graph(
+                    figure=px.bar(
+                        x=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                        y=[dow_donations.get(day, 0) for day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']],
+                        title="Donations by Day of Week"
+                    ).update_layout(xaxis_title="Day of Week", yaxis_title="Number of Donations")
+                )
+            ], style={'width': '50%', 'display': 'inline-block'}),
+            
+            html.Div([
+                html.H4("📦 Top Donated Items"),
+                dcc.Graph(
+                    figure=px.bar(
+                        x=top_items.values[:10],
+                        y=top_items.index[:10],
+                        orientation='h',
+                        title="Most Frequently Donated Items"
+                    ).update_layout(height=400, yaxis_title="Items", xaxis_title="Frequency")
+                )
+            ], style={'width': '50%', 'display': 'inline-block'})
+        ]),
+        
+        # Donor Performance Table
+        html.Div([
+            html.H4("🏆 Top Donor Performance"),
+            html.Div([
+                html.Table([
+                    html.Thead([
+                        html.Tr([
+                            html.Th("Donor"),
+                            html.Th("Donations"),
+                            html.Th("Total Quantity"),
+                            html.Th("First Donation"),
+                            html.Th("Last Donation")
+                        ])
+                    ]),
+                    html.Tbody([
+                        html.Tr([
+                            html.Td(row['Donor'][:30] + '...' if len(row['Donor']) > 30 else row['Donor']),
+                            html.Td(f"{row['Total Donations']:,}"),
+                            html.Td(f"{row['Total Quantity']:,.0f}" if pd.notna(row['Total Quantity']) else 'N/A'),
+                            html.Td(row['First Donation'].strftime('%Y-%m-%d') if pd.notna(row['First Donation']) else 'N/A'),
+                            html.Td(row['Last Donation'].strftime('%Y-%m-%d') if pd.notna(row['Last Donation']) else 'N/A')
+                        ]) for _, row in donor_summary.head(10).iterrows()
+                    ])
+                ])
+            ], style={'overflowX': 'auto'})
+        ])
+    ])
+
+# Page 3: Agency Operations
+def create_agency_operations():
+    """Agency Operations page with orders and fulfillment analysis"""
+    
+    org_summary = organizations_df.groupby('data_source').size().reset_index()
+    org_summary.columns = ['System', 'Organization Count']
+    
+    # Organization creation trends
+    orgs_with_dates = organizations_df[organizations_df['created_time'].notna()].copy()
+    
+    if len(orgs_with_dates) > 0:
+        orgs_with_dates['creation_year'] = orgs_with_dates['created_time'].dt.year
+        yearly_orgs = orgs_with_dates.groupby('creation_year').size().reset_index()
+        yearly_orgs.columns = ['Year', 'New Organizations']
+    else:
+        yearly_orgs = pd.DataFrame({'Year': [], 'New Organizations': []})
+    
+    # System comparison
+    system_stats = organizations_df.groupby('data_source').agg({
+        'org_id': 'count',
+        'created_time': lambda x: x.notna().sum()
+    }).reset_index()
+    system_stats.columns = ['System', 'Total Organizations', 'With Creation Dates']
+    
+    return html.Div([
+        html.H2("🏢 Agency Operations"),
+        
+        # System Overview
+        html.Div([
+            html.H4("🌐 System Overview"),
+            html.Div([
+                html.Div([
+                    html.H3(f"{len(organizations_df):,}", style={'color': '#2E86AB', 'marginBottom': '5px'}),
+                    html.P("Total Organizations", style={'margin': '0'})
+                ], style={'textAlign': 'center', 'padding': '20px', 'backgroundColor': '#e3f2fd', 'margin': '10px', 'borderRadius': '8px', 'flex': '1'}),
+                
+                html.Div([
+                    html.H3(f"{organizations_df['data_source'].nunique()}", style={'color': '#A23B72', 'marginBottom': '5px'}),
+                    html.P("Active Systems", style={'margin': '0'})
+                ], style={'textAlign': 'center', 'padding': '20px', 'backgroundColor': '#fce4ec', 'margin': '10px', 'borderRadius': '8px', 'flex': '1'}),
+                
+                html.Div([
+                    html.H3(f"{orgs_with_dates['created_time'].notna().sum() if len(orgs_with_dates) > 0 else 0:,}", style={'color': '#F18F01', 'marginBottom': '5px'}),
+                    html.P("With Creation Dates", style={'margin': '0'})
+                ], style={'textAlign': 'center', 'padding': '20px', 'backgroundColor': '#fff3e0', 'margin': '10px', 'borderRadius': '8px', 'flex': '1'})
+            ], style={'display': 'flex', 'justifyContent': 'space-between'})
+        ]),
+        
+        # System Distribution
+        html.Div([
+            html.Div([
+                html.H4("📊 Organizations by System"),
+                dcc.Graph(
+                    figure=px.bar(
+                        org_summary,
+                        x='System',
+                        y='Organization Count',
+                        title="Organization Distribution by System",
+                        color='Organization Count',
+                        color_continuous_scale='viridis'
+                    )
+                )
+            ], style={'width': '50%', 'display': 'inline-block'}),
+            
+            html.Div([
+                html.H4("📈 Organization Growth Over Time"),
+                dcc.Graph(
+                    figure=px.line(
+                        yearly_orgs,
+                        x='Year',
+                        y='New Organizations',
+                        title="New Organizations by Year",
+                        markers=True
+                    ) if len(yearly_orgs) > 0 else px.bar(
+                        x=['No Data'],
+                        y=[0],
+                        title="No Creation Date Data Available"
+                    )
+                )
+            ], style={'width': '50%', 'display': 'inline-block'})
+        ]),
+        
+        # System Comparison Table
+        html.Div([
+            html.H4("🔍 System Comparison"),
+            html.Table([
+                html.Thead([
+                    html.Tr([
+                        html.Th("System"),
+                        html.Th("Total Organizations"),
+                        html.Th("With Creation Dates"),
+                        html.Th("Data Completeness")
+                    ])
+                ]),
+                html.Tbody([
+                    html.Tr([
+                        html.Td(row['System']),
+                        html.Td(f"{row['Total Organizations']:,}"),
+                        html.Td(f"{row['With Creation Dates']:,}"),
+                        html.Td(f"{(row['With Creation Dates']/row['Total Organizations']*100):.1f}%" if row['Total Organizations'] > 0 else "0%")
+                    ]) for _, row in system_stats.iterrows()
+                ])
+            ])
+        ]),
+        
+        # Integration Status
+        html.Div([
+            html.H4("✅ Data Integration Status"),
+            html.Ul([
+                html.Li("✅ Real Oracle data successfully extracted"),
+                html.Li("✅ Choice and Agency systems integrated"),
+                html.Li(f"✅ {len(donations_df):,} donation records processed"),
+                html.Li(f"✅ {len(organizations_df):,} organization records unified"),
+                html.Li("⚠️ Order fulfillment data requires additional processing")
+            ])
+        ], style={'backgroundColor': '#f8f9fa', 'padding': '15px', 'borderRadius': '5px', 'marginTop': '20px'})
+    ])
+
+# Callback for page navigation
+@app.callback(Output('page-content', 'children'),
+              Input('tabs', 'value'))
+def display_page(tab):
+    if tab == 'executive':
+        return create_executive_summary()
+    elif tab == 'donations':
+        return create_donation_analytics()
+    elif tab == 'operations':
+        return create_agency_operations()
+    else:
+        return html.Div("Page not found")
+
+if __name__ == '__main__':
+    print("🍽️ HungerHub POC - Plotly Dash Dashboard")
+    print("=" * 50)
+    print("📋 Original POC Specification: Oracle → Python → Plotly Dash")
+    print("🎯 3-Page Dashboard: Executive Summary | Donation Analytics | Agency Operations")
+    print(f"📊 Real Data Loaded: {len(donations_df):,} donations, {len(organizations_df):,} organizations")
+    print("🌐 Starting dashboard server...")
+    print("=" * 50)
+    
+    # Run the app
+    app.run(debug=True, host='0.0.0.0', port=8050)

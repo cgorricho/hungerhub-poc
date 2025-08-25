@@ -1,0 +1,2 @@
+total_people_served,total_services_provided,unique_service_types,average_household_size,total_food_distributed_lbs,total_benefit_value,services_per_person,date_range,validation_score,connection_mode
+35,219,10,2.5714285714285716,7582.102697341404,29804.98579007743,6.257142857142857,2024-01-01 00:00:00 to 2024-04-29 00:00:00,100.0,MOCK

@@ -1,0 +1,17 @@
+{
+  "etl_timestamp": "2025-08-07T18:31:24.807988",
+  "datasets_created": [
+    "people",
+    "services",
+    "summary"
+  ],
+  "total_records": {
+    "people": 10,
+    "services": 40
+  },
+  "data_sources": [
+    "Choice",
+    "AgencyExpress"
+  ],
+  "next_scheduled_run": "2025-08-08T18:31:24.808009"
+}

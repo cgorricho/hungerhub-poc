@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "schemas": [
+    {
+      "name": "RWTXN_46",
+      "priority": "source"
+    }
+  ],
+  "tiers": {
+    "high_priority": [
+      {"name": "AMX_DONATION_LINES", "full_name": "RWTXN_46.AMX_DONATION_LINES", "business_priority": "critical", "description": "Core donation line items data"},
+      {"name": "AMX_DONATION_HEADER", "full_name": "RWTXN_46.AMX_DONATION_HEADER", "business_priority": "critical", "description": "Donation header/summary data"},
+      {"name": "ACBIDS", "full_name": "RWTXN_46.ACBIDS", "business_priority": "critical", "description": "Bidding sessions and auction data"},
+      {"name": "ACWINNER", "full_name": "RWTXN_46.ACWINNER", "business_priority": "critical", "description": "Winner determination data"},
+      {"name": "ACSHARES", "full_name": "RWTXN_46.ACSHARES", "business_priority": "critical", "description": "Bid share allocations"},
+      {"name": "RW_ORDER_ITEM", "full_name": "RWTXN_46.RW_ORDER_ITEM", "business_priority": "high", "description": "Order line items and procurement data"},
+      {"name": "RW_ORDER_SUPPLIER", "full_name": "RWTXN_46.RW_ORDER_SUPPLIER", "business_priority": "high", "description": "Order-supplier relationship data"},
+      {"name": "RW_PURCHASE_ORDER", "full_name": "RWTXN_46.RW_PURCHASE_ORDER", "business_priority": "high", "description": "Purchase order header data"}
+    ],
+    "medium_priority": [
+      {"name": "AMX_OFFER_HEADER", "full_name": "RWTXN_46.AMX_OFFER_HEADER", "business_priority": "medium", "description": "Food offer headers"},
+      {"name": "AMX_OFFER_LINES", "full_name": "RWTXN_46.AMX_OFFER_LINES", "business_priority": "medium", "description": "Food offer line items"},
+      {"name": "RW_ORG", "full_name": "RWTXN_46.RW_ORG", "business_priority": "medium", "description": "Organization master data"},
+      {"name": "ACACTION", "full_name": "RWTXN_46.ACACTION", "business_priority": "medium", "description": "Bidding actions and events log"},
+      {"name": "ACBIDS_ARCHIVE", "full_name": "RWTXN_46.ACBIDS_ARCHIVE", "business_priority": "medium", "description": "Archived bidding sessions"},
+      {"name": "ACSHARES_ARCHIVE", "full_name": "RWTXN_46.ACSHARES_ARCHIVE", "business_priority": "medium", "description": "Archived bid share allocations"},
+      {"name": "RW_USER", "full_name": "RWTXN_46.RW_USER", "business_priority": "medium", "description": "User management data"}
+    ]
+  ]
+}
+

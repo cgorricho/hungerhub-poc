@@ -1,0 +1,286 @@
+{
+  "demographics": {
+    "age_stats": {
+      "mean_age": 38.9,
+      "median_age": 38.5,
+      "age_range": {
+        "min": "31",
+        "max": "49"
+      }
+    },
+    "age_distribution": {
+      "35-49": 6,
+      "18-34": 4,
+      "Under 18": 0,
+      "50-64": 0,
+      "65+": 0
+    },
+    "household_size_distribution": {
+      "3": 2,
+      "4": 2,
+      "2": 2,
+      "5": 2,
+      "1": 2
+    },
+    "avg_household_size": 3.0,
+    "geographic_distribution": {
+      "by_state": {
+        "IL": 2,
+        "TX": 2,
+        "OH": 1,
+        "CA": 1,
+        "TN": 1,
+        "WI": 1,
+        "AZ": 1,
+        "PA": 1
+      },
+      "by_city": {
+        "Springfield": 1,
+        "Riverside": 1,
+        "Lakewood": 1,
+        "Franklin": 1,
+        "Madison": 1,
+        "Chicago": 1,
+        "Houston": 1,
+        "Phoenix": 1,
+        "Philadelphia": 1,
+        "San Antonio": 1
+      }
+    },
+    "data_source_distribution": {
+      "Choice": 5,
+      "AgencyExpress": 5
+    }
+  },
+  "service_patterns": {
+    "service_types": {
+      "WIC": 7,
+      "Food Bank": 6,
+      "SNAP": 6,
+      "Nutrition Education": 5,
+      "Food Pantry": 4,
+      "Senior Meals": 4,
+      "Meal Service": 3,
+      "Emergency Food": 3,
+      "Backpack Program": 2
+    },
+    "temporal_analysis": {
+      "services_by_month": {
+        "1": 11,
+        "2": 13,
+        "3": 16
+      },
+      "services_by_quarter": {
+        "1": 40
+      },
+      "services_by_day_of_week": {
+        "Monday": 9,
+        "Wednesday": 7,
+        "Tuesday": 7,
+        "Friday": 6,
+        "Thursday": 6,
+        "Saturday": 3,
+        "Sunday": 2
+      }
+    },
+    "food_distribution": {
+      "total_pounds_distributed": 1550.4003067609133,
+      "average_pounds_per_service": 38.76000766902283,
+      "food_distribution_by_service_type": {
+        "Backpack Program": 117.81922703647827,
+        "Emergency Food": 112.68265500306723,
+        "Food Bank": 252.2135119035122,
+        "Food Pantry": 117.6178341032659,
+        "Meal Service": 62.285131844953355,
+        "Nutrition Education": 135.57632813999572,
+        "SNAP": 218.32478289356163,
+        "Senior Meals": 210.30500171208357,
+        "WIC": 323.57583412399555
+      }
+    },
+    "service_frequency": {
+      "avg_services_per_person": 4.0,
+      "median_services_per_person": 3.5,
+      "max_services_per_person": "8",
+      "frequency_distribution": {
+        "5": 3,
+        "3": 3,
+        "2": 2,
+        "8": 1,
+        "4": 1
+      }
+    },
+    "benefit_analysis": {
+      "total_benefit_value": 7189.50622499396,
+      "avg_benefit_per_service": 287.5802489997584,
+      "benefit_by_program_type": {
+        "Backpack Program": 891.080174312425,
+        "Food Bank": 1883.1280141945297,
+        "SNAP": 1526.6824773499764,
+        "Senior Meals": 1188.0043356168599,
+        "WIC": 1700.6112235201695
+      }
+    }
+  },
+  "food_insecurity_indicators": {
+    "high_need_analysis": {
+      "high_need_household_count": 7,
+      "percentage_of_total": 70.0,
+      "threshold_criteria": {
+        "household_size_threshold": 4.0,
+        "service_frequency_threshold": 5.0
+      }
+    },
+    "geographic_hotspots": {
+      "cities_by_service_density": [
+        {
+          "city": "Philadelphia",
+          "person_id": 1,
+          "service_id": 8,
+          "foodpounds": 453.8337141540419,
+          "services_per_person": 8.0
+        },
+        {
+          "city": "Chicago",
+          "person_id": 1,
+          "service_id": 5,
+          "foodpounds": 145.82060029989896,
+          "services_per_person": 5.0
+        },
+        {
+          "city": "Phoenix",
+          "person_id": 1,
+          "service_id": 5,
+          "foodpounds": 140.21475926838679,
+          "services_per_person": 5.0
+        },
+        {
+          "city": "Lakewood",
+          "person_id": 1,
+          "service_id": 5,
+          "foodpounds": 144.83149423541133,
+          "services_per_person": 5.0
+        },
+        {
+          "city": "San Antonio",
+          "person_id": 1,
+          "service_id": 4,
+          "foodpounds": 206.47930696344065,
+          "services_per_person": 4.0
+        },
+        {
+          "city": "Franklin",
+          "person_id": 1,
+          "service_id": 3,
+          "foodpounds": 59.81365616529672,
+          "services_per_person": 3.0
+        },
+        {
+          "city": "Madison",
+          "person_id": 1,
+          "service_id": 3,
+          "foodpounds": 76.0826049620106,
+          "services_per_person": 3.0
+        },
+        {
+          "city": "Houston",
+          "person_id": 1,
+          "service_id": 3,
+          "foodpounds": 175.88997698386282,
+          "services_per_person": 3.0
+        },
+        {
+          "city": "Riverside",
+          "person_id": 1,
+          "service_id": 2,
+          "foodpounds": 52.7968308646288,
+          "services_per_person": 2.0
+        },
+        {
+          "city": "Springfield",
+          "person_id": 1,
+          "service_id": 2,
+          "foodpounds": 94.63736286393477,
+          "services_per_person": 2.0
+        }
+      ],
+      "top_cities_by_food_distribution": [
+        {
+          "city": "Philadelphia",
+          "foodpounds": 453.8337141540419
+        },
+        {
+          "city": "San Antonio",
+          "foodpounds": 206.47930696344065
+        },
+        {
+          "city": "Houston",
+          "foodpounds": 175.88997698386282
+        }
+      ]
+    },
+    "vulnerability_analysis": {
+      "high_vulnerability_count": 4,
+      "avg_vulnerability_score": 3.4,
+      "vulnerability_distribution": {
+        "2": 3,
+        "1": 2,
+        "5": 2,
+        "3": 1,
+        "7": 1,
+        "6": 1
+      },
+      "most_vulnerable_individuals": [
+        {
+          "full_name": "Jennifer Wilson",
+          "vulnerability_score": 7
+        },
+        {
+          "full_name": "Emily Taylor",
+          "vulnerability_score": 6
+        },
+        {
+          "full_name": "Michael Miller",
+          "vulnerability_score": 5
+        },
+        {
+          "full_name": "Sarah Davis",
+          "vulnerability_score": 5
+        }
+      ]
+    }
+  },
+  "recommendations": {
+    "service_optimization": [
+      "Peak service demand occurs in month 3. Consider increasing staffing and inventory during this period.",
+      "Most common service type represents the highest volume. Consider expanding capacity for popular services.",
+      "Average of 4.0 services per person suggests regular ongoing need.",
+      "Implement appointment scheduling for high-traffic periods to reduce wait times."
+    ],
+    "resource_allocation": [
+      "With average household size of 3.0, consider family-sized food packages as default.",
+      "Focus outreach efforts on underrepresented geographic areas.",
+      "Develop age-appropriate programs for identified demographic groups.",
+      "Consider mobile food services for areas with lower access."
+    ],
+    "program_development": [
+      "Develop targeted support for 4 high-vulnerability individuals (40.0% of population).",
+      "Create case management programs for households with vulnerability scores \u2265 4.",
+      "Implement nutrition education programs alongside food distribution.",
+      "Establish partnerships with local healthcare providers for holistic support."
+    ],
+    "data_monitoring": [
+      "Standardize data collection across both database systems for better integration.",
+      "Implement real-time dashboard monitoring for service delivery metrics.",
+      "Create automated alerts for individuals showing increased service dependency.",
+      "Establish monthly reporting cadence for stakeholder updates."
+    ]
+  },
+  "analysis_metadata": {
+    "analysis_timestamp": "2025-08-07T18:39:38.171871",
+    "data_period": "2024-01-04 00:00:00 to 2024-03-23 00:00:00",
+    "total_people_analyzed": 10,
+    "total_services_analyzed": 40,
+    "analysis_duration": "0:00:02.018910"
+  }
+}

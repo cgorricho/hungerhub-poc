@@ -1,0 +1,42 @@
+{
+  "storage_quantity": {
+    "storage_types": [
+      "DRY",
+      "REFRIGERATED",
+      "FROZEN"
+    ],
+    "quantities": [
+      1456789,
+      523467,
+      198234
+    ],
+    "percentages": [
+      66.8,
+      24.0,
+      9.1
+    ]
+  },
+  "storage_weight": {
+    "storage_types": [
+      "DRY",
+      "REFRIGERATED",
+      "FROZEN"
+    ],
+    "weights_lbs": [
+      18567432,
+      7234567,
+      2987123
+    ],
+    "weights_tons": [
+      8425.1,
+      3283.2,
+      1355.4
+    ],
+    "percentages": [
+      64.7,
+      25.2,
+      10.4
+    ]
+  },
+  "generated_at": "2025-08-21T17:22:46.973272"
+}

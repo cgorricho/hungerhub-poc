@@ -1,0 +1,6 @@
+ParticipantID,MemberID,FirstName,LastName,DOB,Gender,Address1,City,State,ZipCode,Phone,Email,HouseholdSize,IncomeLevel,EnrollmentDate
+1001,M2024001,Sarah,Davis,1988-05-12,F,789 First Ave,Chicago,IL,60601,555-1001,sarah@email.com,2,Low,2024-01-10
+1002,M2024002,Michael,Miller,1975-09-18,M,234 Second St,Houston,TX,77001,555-1002,michael@email.com,3,Very Low,2024-01-25
+1003,M2024003,Jennifer,Wilson,1993-12-03,F,567 Third Blvd,Phoenix,AZ,85001,555-1003,jennifer@email.com,4,Low,2024-02-14
+1004,M2024004,William,Moore,1982-07-25,M,890 Fourth Ln,Philadelphia,PA,19101,555-1004,william@email.com,1,Moderate,2024-03-01
+1005,M2024005,Emily,Taylor,1991-04-14,F,123 Fifth Way,San Antonio,TX,78201,555-1005,emily@email.com,5,Very Low,2024-02-28

@@ -1,0 +1,130 @@
+{
+  "processing_date": "2025-08-14T06:06:01.858971",
+  "data_source": "oracle_database_real",
+  "input_tables": [
+    "AMX_DONATION_HEADER",
+    "AMX_DONATION_LINES",
+    "ACBIDS_ARCHIVE",
+    "ACSHARES",
+    "ACSHARES_ARCHIVE",
+    "RW_ORG",
+    "RW_ORDER_ITEM",
+    "RW_ORDER_SUPPLIER",
+    "RW_PURCHASE_ORDER",
+    "AMX_OFFER_HEADER",
+    "AMX_OFFER_LINES"
+  ],
+  "table_stats": {
+    "AMX_DONATION_HEADER": {
+      "rows": 1389,
+      "columns": 30,
+      "memory_mb": 2.144102096557617,
+      "loaded_at": "2025-08-14T06:05:59.422277"
+    },
+    "AMX_DONATION_LINES": {
+      "rows": 27099,
+      "columns": 26,
+      "memory_mb": 25.249768257141113,
+      "loaded_at": "2025-08-14T06:05:59.473755"
+    },
+    "ACBIDS_ARCHIVE": {
+      "rows": 1108,
+      "columns": 26,
+      "memory_mb": 0.608881950378418,
+      "loaded_at": "2025-08-14T06:05:59.479192"
+    },
+    "ACSHARES": {
+      "rows": 273,
+      "columns": 17,
+      "memory_mb": 0.07260608673095703,
+      "loaded_at": "2025-08-14T06:05:59.482153"
+    },
+    "ACSHARES_ARCHIVE": {
+      "rows": 573114,
+      "columns": 19,
+      "memory_mb": 212.2693214416504,
+      "loaded_at": "2025-08-14T06:05:59.736996"
+    },
+    "RW_ORG": {
+      "rows": 630,
+      "columns": 44,
+      "memory_mb": 0.9144210815429688,
+      "loaded_at": "2025-08-14T06:05:59.745737"
+    },
+    "RW_ORDER_ITEM": {
+      "rows": 230282,
+      "columns": 75,
+      "memory_mb": 426.38793087005615,
+      "loaded_at": "2025-08-14T06:06:00.611380"
+    },
+    "RW_ORDER_SUPPLIER": {
+      "rows": 96552,
+      "columns": 7,
+      "memory_mb": 24.382168769836426,
+      "loaded_at": "2025-08-14T06:06:00.671982"
+    },
+    "RW_PURCHASE_ORDER": {
+      "rows": 96552,
+      "columns": 51,
+      "memory_mb": 126.09687614440918,
+      "loaded_at": "2025-08-14T06:06:00.976577"
+    },
+    "AMX_OFFER_HEADER": {
+      "rows": 26343,
+      "columns": 46,
+      "memory_mb": 58.64008712768555,
+      "loaded_at": "2025-08-14T06:06:01.093506"
+    },
+    "AMX_OFFER_LINES": {
+      "rows": 91783,
+      "columns": 32,
+      "memory_mb": 88.74193382263184,
+      "loaded_at": "2025-08-14T06:06:01.258170"
+    }
+  },
+  "output_files": {
+    "unified_dataset": "data/processed/unified_real/unified_donation_flow.parquet",
+    "analysis_views": {
+      "flow_stage_summary": "data/processed/unified_real/view_flow_stage_summary.parquet",
+      "donor_performance": "data/processed/unified_real/view_donor_performance.parquet",
+      "storage_requirement_analysis": "data/processed/unified_real/view_storage_requirement_analysis.parquet",
+      "monthly_donation_trends": "data/processed/unified_real/view_monthly_donation_trends.parquet"
+    }
+  },
+  "unified_dataset_stats": {
+    "rows": 1389,
+    "columns": 71,
+    "memory_mb": 4.030045509338379
+  },
+  "notes": [
+    "This analysis was created from REAL Oracle database extractions",
+    "Includes actual donation data, archived bidding records, and share allocations",
+    "Ready for comprehensive dashboard visualization",
+    "Total records processed: 1,145,125"
+  ],
+  "data_cleaning_operations": [
+    {
+      "timestamp": "2025-08-14T10:23:05.209852",
+      "operation": "storage_requirement_standardization",
+      "description": "Consolidated \"REFRIG\" and \"Refrigerated\" labels into \"REFRIGERATED\" for consistency",
+      "affected_files": [
+        "unified_donation_flow.parquet",
+        "view_storage_requirement_analysis.parquet"
+      ],
+      "changes": {
+        "before": [
+          "DRY",
+          "FROZEN",
+          "REFRIG",
+          "Refrigerated"
+        ],
+        "after": [
+          "DRY",
+          "FROZEN",
+          "REFRIGERATED"
+        ]
+      }
+    }
+  ],
+  "last_modified": "2025-08-14T10:23:05.210124"
+}

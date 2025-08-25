@@ -1,0 +1,451 @@
+{
+  "exploration_timestamp": "2025-08-07T18:29:10.831574",
+  "databases": {
+    "choice": {
+      "database_name": "Choice",
+      "total_tables": 25,
+      "analysis_timestamp": "2025-08-07T18:29:10.831584",
+      "tables": {
+        "dbo.Clients": {
+          "schema": "dbo",
+          "table_name": "Clients",
+          "row_count": 15847,
+          "column_count": 12,
+          "columns": [
+            {
+              "COLUMN_NAME": "ClientID",
+              "DATA_TYPE": "int",
+              "IS_NULLABLE": "NO"
+            },
+            {
+              "COLUMN_NAME": "FirstName",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "LastName",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "DateOfBirth",
+              "DATA_TYPE": "date",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "Address",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "City",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "State",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "ZipCode",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "Phone",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "Email",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "HouseholdSize",
+              "DATA_TYPE": "int",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "CreatedDate",
+              "DATA_TYPE": "datetime2",
+              "IS_NULLABLE": "NO"
+            }
+          ],
+          "sample_available": true,
+          "sample_rows": 10
+        },
+        "dbo.Services": {
+          "schema": "dbo",
+          "table_name": "Services",
+          "row_count": 89234,
+          "column_count": 8,
+          "columns": [
+            {
+              "COLUMN_NAME": "ServiceID",
+              "DATA_TYPE": "int",
+              "IS_NULLABLE": "NO"
+            },
+            {
+              "COLUMN_NAME": "ClientID",
+              "DATA_TYPE": "int",
+              "IS_NULLABLE": "NO"
+            },
+            {
+              "COLUMN_NAME": "ServiceType",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "NO"
+            },
+            {
+              "COLUMN_NAME": "ServiceDate",
+              "DATA_TYPE": "date",
+              "IS_NULLABLE": "NO"
+            },
+            {
+              "COLUMN_NAME": "Location",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "FoodPounds",
+              "DATA_TYPE": "decimal",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "MealCount",
+              "DATA_TYPE": "int",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "Notes",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            }
+          ],
+          "sample_available": true,
+          "sample_rows": 10
+        },
+        "dbo.FoodInventory": {
+          "schema": "dbo",
+          "table_name": "FoodInventory",
+          "row_count": 3456,
+          "column_count": 10,
+          "columns": [
+            {
+              "COLUMN_NAME": "ItemID",
+              "DATA_TYPE": "int",
+              "IS_NULLABLE": "NO"
+            },
+            {
+              "COLUMN_NAME": "ItemName",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "NO"
+            },
+            {
+              "COLUMN_NAME": "Category",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "CurrentStock",
+              "DATA_TYPE": "int",
+              "IS_NULLABLE": "NO"
+            },
+            {
+              "COLUMN_NAME": "Unit",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "ExpirationDate",
+              "DATA_TYPE": "date",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "Cost",
+              "DATA_TYPE": "money",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "Supplier",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "Location",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "LastUpdated",
+              "DATA_TYPE": "datetime2",
+              "IS_NULLABLE": "NO"
+            }
+          ],
+          "sample_available": true,
+          "sample_rows": 10
+        }
+      }
+    },
+    "agency_express": {
+      "database_name": "AgencyExpress",
+      "total_tables": 18,
+      "analysis_timestamp": "2025-08-07T18:29:10.831595",
+      "tables": {
+        "dbo.Participants": {
+          "schema": "dbo",
+          "table_name": "Participants",
+          "row_count": 23891,
+          "column_count": 15,
+          "columns": [
+            {
+              "COLUMN_NAME": "ParticipantID",
+              "DATA_TYPE": "int",
+              "IS_NULLABLE": "NO"
+            },
+            {
+              "COLUMN_NAME": "MemberID",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "FirstName",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "NO"
+            },
+            {
+              "COLUMN_NAME": "LastName",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "NO"
+            },
+            {
+              "COLUMN_NAME": "DOB",
+              "DATA_TYPE": "date",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "Gender",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "Address1",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "City",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "State",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "ZipCode",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "Phone",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "Email",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "HouseholdSize",
+              "DATA_TYPE": "int",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "IncomeLevel",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "EnrollmentDate",
+              "DATA_TYPE": "datetime2",
+              "IS_NULLABLE": "NO"
+            }
+          ],
+          "sample_available": true,
+          "sample_rows": 10
+        },
+        "dbo.ProgramAssistance": {
+          "schema": "dbo",
+          "table_name": "ProgramAssistance",
+          "row_count": 156789,
+          "column_count": 9,
+          "columns": [
+            {
+              "COLUMN_NAME": "AssistanceID",
+              "DATA_TYPE": "int",
+              "IS_NULLABLE": "NO"
+            },
+            {
+              "COLUMN_NAME": "ParticipantID",
+              "DATA_TYPE": "int",
+              "IS_NULLABLE": "NO"
+            },
+            {
+              "COLUMN_NAME": "ProgramType",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "NO"
+            },
+            {
+              "COLUMN_NAME": "AssistanceDate",
+              "DATA_TYPE": "date",
+              "IS_NULLABLE": "NO"
+            },
+            {
+              "COLUMN_NAME": "BenefitAmount",
+              "DATA_TYPE": "money",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "FoodValue",
+              "DATA_TYPE": "money",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "ServingSize",
+              "DATA_TYPE": "int",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "AgencyLocation",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "Status",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "NO"
+            }
+          ],
+          "sample_available": true,
+          "sample_rows": 10
+        },
+        "dbo.Agencies": {
+          "schema": "dbo",
+          "table_name": "Agencies",
+          "row_count": 245,
+          "column_count": 12,
+          "columns": [
+            {
+              "COLUMN_NAME": "AgencyID",
+              "DATA_TYPE": "int",
+              "IS_NULLABLE": "NO"
+            },
+            {
+              "COLUMN_NAME": "AgencyName",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "NO"
+            },
+            {
+              "COLUMN_NAME": "AgencyType",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "Address",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "City",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "State",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "ZipCode",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "Phone",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "ContactPerson",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "Email",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "ServicesOffered",
+              "DATA_TYPE": "nvarchar",
+              "IS_NULLABLE": "YES"
+            },
+            {
+              "COLUMN_NAME": "IsActive",
+              "DATA_TYPE": "bit",
+              "IS_NULLABLE": "NO"
+            }
+          ],
+          "sample_available": true,
+          "sample_rows": 10
+        }
+      }
+    }
+  },
+  "priority_tables": {
+    "choice": [
+      {
+        "table_key": "dbo.Clients",
+        "keyword_match": "client",
+        "priority_score": 1
+      },
+      {
+        "table_key": "dbo.Services",
+        "keyword_match": "service",
+        "priority_score": 1
+      },
+      {
+        "table_key": "dbo.FoodInventory",
+        "keyword_match": "food",
+        "priority_score": 1
+      }
+    ],
+    "agency_express": [
+      {
+        "table_key": "dbo.Participants",
+        "keyword_match": "participant",
+        "priority_score": 1
+      },
+      {
+        "table_key": "dbo.ProgramAssistance",
+        "keyword_match": "assistance",
+        "priority_score": 1
+      },
+      {
+        "table_key": "dbo.Agencies",
+        "keyword_match": "agency",
+        "priority_score": 1
+      }
+    ]
+  },
+  "summary": {
+    "total_choice_tables": 25,
+    "total_agency_tables": 18,
+    "priority_choice_tables": 3,
+    "priority_agency_tables": 3
+  }
+}

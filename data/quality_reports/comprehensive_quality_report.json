@@ -1,0 +1,262 @@
+{
+  "overall_quality_score": 100.0,
+  "quality_grade": "A+",
+  "total_validations": 6,
+  "validations": [
+    {
+      "integrity_score": 100.0,
+      "total_records": 15,
+      "issues_found": [],
+      "null_analysis": {
+        "clientid": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "firstname": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "lastname": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "dateofbirth": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "address": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "city": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "state": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "zipcode": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "phone": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "email": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "householdsize": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "createddate": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "age": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "full_name": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "data_source": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "record_type": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        }
+      },
+      "range_violations": [],
+      "consistency_issues": []
+    },
+    {
+      "business_rules_score": 100.0,
+      "rule_violations": []
+    },
+    {
+      "integrity_score": 100.0,
+      "total_records": 74,
+      "issues_found": [],
+      "null_analysis": {
+        "serviceid": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "clientid": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "servicetype": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "servicedate": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "location": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "foodpounds": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "mealcount": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "notes": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "year": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "month": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "quarter": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "day_of_week": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "household_size": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "food_pounds_per_person": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "meals_per_person": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "data_source": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "record_type": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        }
+      },
+      "range_violations": [],
+      "consistency_issues": []
+    },
+    {
+      "business_rules_score": 100.0,
+      "rule_violations": []
+    },
+    {
+      "integrity_score": 100.0,
+      "total_records": 20,
+      "issues_found": [],
+      "null_analysis": {
+        "participantid": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "memberid": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "firstname": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "lastname": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "dob": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "gender": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "address1": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "city": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "state": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "zipcode": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "phone": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "email": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "householdsize": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "incomelevel": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "enrollmentdate": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "age": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "full_name": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "income_level_numeric": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "data_source": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        },
+        "record_type": {
+          "null_count": 0,
+          "null_percentage": 0.0
+        }
+      },
+      "range_violations": [],
+      "consistency_issues": []
+    },
+    {
+      "business_rules_score": 100.0,
+      "rule_violations": []
+    }
+  ],
+  "recommendations": [
+    "Consider implementing data collection improvements to reduce null values"
+  ],
+  "report_timestamp": "2025-08-07T19:09:50.696483"
+}

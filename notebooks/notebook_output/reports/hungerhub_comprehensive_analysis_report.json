@@ -1,0 +1,667 @@
+{
+  "analysis_date": "2025-08-11T01:27:53.293898",
+  "executive_summary": {
+    "total_datasets": 10,
+    "total_records": 6000,
+    "total_columns": 255,
+    "largest_dataset": [
+      "unified_documentheader",
+      1000
+    ],
+    "numeric_columns": 32,
+    "categorical_columns": 197,
+    "datetime_columns": 26
+  },
+  "data_quality": {
+    "individual_scores": {
+      "choice_DOCUMENTHEADER": {
+        "missing_percentage": 0.0,
+        "duplicate_percentage": 0.0,
+        "type_consistency": 100.0,
+        "completeness_score": 100.0,
+        "uniqueness_score": 100.0,
+        "consistency_score": 100.0,
+        "overall_score": 100.0
+      },
+      "choice_AMX_DONATION_HEADER": {
+        "missing_percentage": 0.40800000000000003,
+        "duplicate_percentage": 0.0,
+        "type_consistency": 100,
+        "completeness_score": 99.592,
+        "uniqueness_score": 100.0,
+        "consistency_score": 100,
+        "overall_score": 99.86399999999999
+      },
+      "choice_AMX_DONATION_LINES": {
+        "missing_percentage": 5.2956521739130435,
+        "duplicate_percentage": 0.0,
+        "type_consistency": 100.0,
+        "completeness_score": 94.70434782608696,
+        "uniqueness_score": 100.0,
+        "consistency_score": 100.0,
+        "overall_score": 98.23478260869565
+      },
+      "choice_RW_ORG": {
+        "missing_percentage": 3.7037037037037033,
+        "duplicate_percentage": 0.0,
+        "type_consistency": 100.0,
+        "completeness_score": 96.29629629629629,
+        "uniqueness_score": 100.0,
+        "consistency_score": 100.0,
+        "overall_score": 98.76543209876543
+      },
+      "agency_DOCUMENTHEADER": {
+        "missing_percentage": 0.0,
+        "duplicate_percentage": 0.0,
+        "type_consistency": 100.0,
+        "completeness_score": 100.0,
+        "uniqueness_score": 100.0,
+        "consistency_score": 100.0,
+        "overall_score": 100.0
+      },
+      "agency_DOCUMENTLINES": {
+        "missing_percentage": 0.0,
+        "duplicate_percentage": 0.0,
+        "type_consistency": 100.0,
+        "completeness_score": 100.0,
+        "uniqueness_score": 100.0,
+        "consistency_score": 100.0,
+        "overall_score": 100.0
+      },
+      "agency_RW_ORG": {
+        "missing_percentage": 3.571428571428571,
+        "duplicate_percentage": 0.0,
+        "type_consistency": 100.0,
+        "completeness_score": 96.42857142857143,
+        "uniqueness_score": 100.0,
+        "consistency_score": 100.0,
+        "overall_score": 98.80952380952381
+      },
+      "unified_documentheader": {
+        "missing_percentage": 0.0,
+        "duplicate_percentage": 0.0,
+        "type_consistency": 100.0,
+        "completeness_score": 100.0,
+        "uniqueness_score": 100.0,
+        "consistency_score": 100.0,
+        "overall_score": 100.0
+      },
+      "unified_donation_header": {
+        "missing_percentage": 0.0,
+        "duplicate_percentage": 0.0,
+        "type_consistency": 100,
+        "completeness_score": 100.0,
+        "uniqueness_score": 100.0,
+        "consistency_score": 100,
+        "overall_score": 100.0
+      },
+      "unified_rw_org": {
+        "missing_percentage": 0.0,
+        "duplicate_percentage": 0.0,
+        "type_consistency": 100.0,
+        "completeness_score": 100.0,
+        "uniqueness_score": 100.0,
+        "consistency_score": 100.0,
+        "overall_score": 100.0
+      }
+    },
+    "average_score": 99.56737385169849,
+    "overall_rating": "High Quality - Ready for production analytics"
+  },
+  "operational_insights": [
+    [
+      "Data Integration",
+      "Successfully created 3 unified datasets for cross-database analysis"
+    ],
+    [
+      "Data Coverage",
+      "Multi-source data available: 4 Choice datasets, 3 Agency datasets"
+    ],
+    [
+      "Data Volume",
+      "Substantial data volume (6,000 records) suitable for statistical analysis and trend identification"
+    ],
+    [
+      "Geographic Analysis",
+      "Geographic data available - enables location-based analysis and mapping"
+    ],
+    [
+      "Temporal Analysis",
+      "Temporal data available - enables trend analysis and seasonal pattern identification"
+    ],
+    [
+      "Quantitative Analysis",
+      "Quantitative data available - enables volume and efficiency analysis"
+    ]
+  ],
+  "recommendations": [
+    [
+      "Medium Priority",
+      "Advanced Analytics",
+      "Data volume supports advanced analytics - consider implementing machine learning models for predictive insights"
+    ],
+    [
+      "Medium Priority",
+      "Data Integration",
+      "Unified datasets created successfully - establish automated ETL pipelines for real-time data integration"
+    ],
+    [
+      "High Priority",
+      "Business Intelligence",
+      "Deploy interactive dashboards for real-time operational monitoring"
+    ],
+    [
+      "Medium Priority",
+      "Automation",
+      "Implement automated report generation for key stakeholders"
+    ],
+    [
+      "High Priority",
+      "Operations",
+      "Leverage correlation analysis findings to optimize food distribution logistics"
+    ],
+    [
+      "High Priority",
+      "Resource Planning",
+      "Use geographic and temporal patterns to improve resource allocation"
+    ]
+  ],
+  "all_insights": [
+    [
+      "Distribution",
+      "status in choice_DOCUMENTHEADER is highly right-skewed (skewness: 7.58)"
+    ],
+    [
+      "Distribution",
+      "notify in choice_DOCUMENTHEADER is highly right-skewed (skewness: 8.62)"
+    ],
+    [
+      "Data Quality",
+      "documentid in choice_DOCUMENTHEADER has very high uniqueness (100.0%) - possibly an identifier"
+    ],
+    [
+      "Data Quality",
+      "refnumber in choice_DOCUMENTHEADER has very high uniqueness (100.0%) - possibly an identifier"
+    ],
+    [
+      "Data Pattern",
+      "userid in choice_DOCUMENTHEADER is dominated by 'Unknown' (88.0% of records)"
+    ],
+    [
+      "Data Quality",
+      "donationnumber in choice_AMX_DONATION_HEADER has very high uniqueness (100.0%) - possibly an identifier"
+    ],
+    [
+      "Data Pattern",
+      "dcontactfax in choice_AMX_DONATION_HEADER is dominated by 'Unknown' (88.2% of records)"
+    ],
+    [
+      "Temporal Coverage",
+      "donationdate in choice_AMX_DONATION_HEADER spans 3090 days - good for trend analysis"
+    ],
+    [
+      "Temporal Coverage",
+      "releasedate in choice_AMX_DONATION_HEADER spans 8198 days - good for trend analysis"
+    ],
+    [
+      "Temporal Coverage",
+      "outbydate in choice_AMX_DONATION_HEADER spans 8243 days - good for trend analysis"
+    ],
+    [
+      "Distribution",
+      "quantity in choice_AMX_DONATION_LINES is highly right-skewed (skewness: 10.01)"
+    ],
+    [
+      "Distribution",
+      "quantityperpallet in choice_AMX_DONATION_LINES is highly right-skewed (skewness: 10.21)"
+    ],
+    [
+      "Distribution",
+      "totalpallets in choice_AMX_DONATION_LINES is highly right-skewed (skewness: 11.18)"
+    ],
+    [
+      "Distribution",
+      "grossweight in choice_AMX_DONATION_LINES is highly right-skewed (skewness: 3.79)"
+    ],
+    [
+      "Distribution",
+      "totalgrossweight in choice_AMX_DONATION_LINES is highly right-skewed (skewness: 4.22)"
+    ],
+    [
+      "Distribution",
+      "netweight in choice_AMX_DONATION_LINES is highly right-skewed (skewness: 5.30)"
+    ],
+    [
+      "Temporal Coverage",
+      "manufacturedate in choice_AMX_DONATION_LINES spans 97082 days - good for trend analysis"
+    ],
+    [
+      "Temporal Coverage",
+      "expirationdate in choice_AMX_DONATION_LINES spans 97231 days - good for trend analysis"
+    ],
+    [
+      "Temporal Coverage",
+      "usebydate in choice_AMX_DONATION_LINES spans 4329 days - good for trend analysis"
+    ],
+    [
+      "Distribution",
+      "sys_flags in choice_RW_ORG is highly right-skewed (skewness: 22.36)"
+    ],
+    [
+      "Data Pattern",
+      "sys_flags in choice_RW_ORG has 99.8% zero values"
+    ],
+    [
+      "Data Pattern",
+      "years_in_business in choice_RW_ORG has 100.0% zero values"
+    ],
+    [
+      "Data Pattern",
+      "industry_val_num in choice_RW_ORG has 100.0% zero values"
+    ],
+    [
+      "Distribution",
+      "oca in choice_RW_ORG is highly right-skewed (skewness: 4.61)"
+    ],
+    [
+      "Data Quality",
+      "org_id in choice_RW_ORG has very high uniqueness (100.0%) - possibly an identifier"
+    ],
+    [
+      "Data Quality",
+      "entity_name in choice_RW_ORG has very high uniqueness (100.0%) - possibly an identifier"
+    ],
+    [
+      "Data Pattern",
+      "status_flag in choice_RW_ORG is dominated by 'A' (87.2% of records)"
+    ],
+    [
+      "Data Pattern",
+      "currency in choice_RW_ORG is dominated by 'USD' (100.0% of records)"
+    ],
+    [
+      "Data Pattern",
+      "currency_pattern in choice_RW_ORG is dominated by '*###,##0.00' (100.0% of records)"
+    ],
+    [
+      "Data Pattern",
+      "float_pattern in choice_RW_ORG is dominated by '###,##0.###' (100.0% of records)"
+    ],
+    [
+      "Data Pattern",
+      "group_separator in choice_RW_ORG is dominated by ',' (100.0% of records)"
+    ],
+    [
+      "Data Pattern",
+      "decimal_char in choice_RW_ORG is dominated by '.' (100.0% of records)"
+    ],
+    [
+      "Data Pattern",
+      "language in choice_RW_ORG is dominated by 'en' (100.0% of records)"
+    ],
+    [
+      "Temporal Coverage",
+      "created_time in choice_RW_ORG spans 4894 days - good for trend analysis"
+    ],
+    [
+      "Temporal Coverage",
+      "modified_time in choice_RW_ORG spans 4660 days - good for trend analysis"
+    ],
+    [
+      "Distribution",
+      "status in agency_DOCUMENTHEADER is highly right-skewed (skewness: 8.00)"
+    ],
+    [
+      "Distribution",
+      "notify in agency_DOCUMENTHEADER is highly right-skewed (skewness: 2.11)"
+    ],
+    [
+      "Data Pattern",
+      "isae4order in agency_DOCUMENTHEADER has 100.0% zero values"
+    ],
+    [
+      "Data Quality",
+      "documentid in agency_DOCUMENTHEADER has very high uniqueness (100.0%) - possibly an identifier"
+    ],
+    [
+      "Data Quality",
+      "refnumber in agency_DOCUMENTHEADER has very high uniqueness (100.0%) - possibly an identifier"
+    ],
+    [
+      "Data Pattern",
+      "userid in agency_DOCUMENTHEADER is dominated by 'Unknown' (85.2% of records)"
+    ],
+    [
+      "Data Pattern",
+      "warehouseid in agency_DOCUMENTHEADER is dominated by 'Unknown' (87.6% of records)"
+    ],
+    [
+      "Data Pattern",
+      "username in agency_DOCUMENTHEADER is dominated by 'Unknown' (85.2% of records)"
+    ],
+    [
+      "Data Pattern",
+      "useremail in agency_DOCUMENTHEADER is dominated by 'Unknown' (85.2% of records)"
+    ],
+    [
+      "Data Pattern",
+      "sourceorgname in agency_DOCUMENTHEADER is dominated by 'Unknown' (85.2% of records)"
+    ],
+    [
+      "Data Pattern",
+      "domainid in agency_DOCUMENTHEADER is dominated by 'Unknown' (86.4% of records)"
+    ],
+    [
+      "Distribution",
+      "donatedquantity in agency_DOCUMENTLINES is highly right-skewed (skewness: 5.56)"
+    ],
+    [
+      "Data Pattern",
+      "donatedquantity in agency_DOCUMENTLINES has 93.2% zero values"
+    ],
+    [
+      "Distribution",
+      "acceptedquantity in agency_DOCUMENTLINES is highly right-skewed (skewness: 9.67)"
+    ],
+    [
+      "Data Pattern",
+      "prop7 in agency_DOCUMENTLINES is dominated by '0' (91.8% of records)"
+    ],
+    [
+      "Distribution",
+      "sys_flags in agency_RW_ORG is highly right-skewed (skewness: 22.36)"
+    ],
+    [
+      "Data Pattern",
+      "sys_flags in agency_RW_ORG has 99.8% zero values"
+    ],
+    [
+      "Data Pattern",
+      "years_in_business in agency_RW_ORG has 100.0% zero values"
+    ],
+    [
+      "Data Pattern",
+      "industry_val_num in agency_RW_ORG has 100.0% zero values"
+    ],
+    [
+      "Distribution",
+      "oca in agency_RW_ORG is highly right-skewed (skewness: 15.65)"
+    ],
+    [
+      "Data Quality",
+      "org_id in agency_RW_ORG has very high uniqueness (100.0%) - possibly an identifier"
+    ],
+    [
+      "Data Quality",
+      "entity_name in agency_RW_ORG has very high uniqueness (100.0%) - possibly an identifier"
+    ],
+    [
+      "Data Quality",
+      "printable_name in agency_RW_ORG has very high uniqueness (97.4%) - possibly an identifier"
+    ],
+    [
+      "Data Pattern",
+      "status_flag in agency_RW_ORG is dominated by 'I' (94.2% of records)"
+    ],
+    [
+      "Data Pattern",
+      "currency in agency_RW_ORG is dominated by 'USD' (100.0% of records)"
+    ],
+    [
+      "Data Pattern",
+      "currency_pattern in agency_RW_ORG is dominated by '*###,##0.00' (100.0% of records)"
+    ],
+    [
+      "Data Pattern",
+      "float_pattern in agency_RW_ORG is dominated by '###,##0.00' (99.0% of records)"
+    ],
+    [
+      "Data Pattern",
+      "group_separator in agency_RW_ORG is dominated by ',' (100.0% of records)"
+    ],
+    [
+      "Data Pattern",
+      "decimal_char in agency_RW_ORG is dominated by '.' (100.0% of records)"
+    ],
+    [
+      "Temporal Coverage",
+      "created_time in agency_RW_ORG spans 8522 days - good for trend analysis"
+    ],
+    [
+      "Temporal Coverage",
+      "modified_time in agency_RW_ORG spans 8522 days - good for trend analysis"
+    ],
+    [
+      "Distribution",
+      "notify in unified_documentheader is highly right-skewed (skewness: 8.98)"
+    ],
+    [
+      "Distribution",
+      "status in unified_documentheader is highly right-skewed (skewness: 7.77)"
+    ],
+    [
+      "Data Pattern",
+      "username in unified_documentheader is dominated by 'Unknown' (86.8% of records)"
+    ],
+    [
+      "Data Quality",
+      "refnumber in unified_documentheader has very high uniqueness (100.0%) - possibly an identifier"
+    ],
+    [
+      "Data Quality",
+      "documentid in unified_documentheader has very high uniqueness (100.0%) - possibly an identifier"
+    ],
+    [
+      "Data Pattern",
+      "domainid in unified_documentheader is dominated by 'Unknown' (87.4% of records)"
+    ],
+    [
+      "Data Pattern",
+      "domainname in unified_documentheader is dominated by 'Unknown' (86.8% of records)"
+    ],
+    [
+      "Data Pattern",
+      "shipmentmethod in unified_donation_header is dominated by 'PICKUP' (83.8% of records)"
+    ],
+    [
+      "Data Pattern",
+      "dcontactfax in unified_donation_header is dominated by 'Unknown' (88.2% of records)"
+    ],
+    [
+      "Data Pattern",
+      "source_database in unified_donation_header is dominated by 'choice' (100.0% of records)"
+    ],
+    [
+      "Data Pattern",
+      "source_table in unified_donation_header is dominated by 'choice_AMX_DONATION_HEADER' (100.0% of records)"
+    ],
+    [
+      "Temporal Coverage",
+      "releasedate in unified_donation_header spans 45846 days - good for trend analysis"
+    ],
+    [
+      "Temporal Coverage",
+      "donationdate in unified_donation_header spans 45846 days - good for trend analysis"
+    ],
+    [
+      "Temporal Coverage",
+      "outbydate in unified_donation_header spans 45928 days - good for trend analysis"
+    ],
+    [
+      "Data Pattern",
+      "years_in_business in unified_rw_org has 100.0% zero values"
+    ],
+    [
+      "Distribution",
+      "oca in unified_rw_org is highly right-skewed (skewness: 21.79)"
+    ],
+    [
+      "Data Pattern",
+      "industry_val_num in unified_rw_org has 100.0% zero values"
+    ],
+    [
+      "Distribution",
+      "sys_flags in unified_rw_org is highly right-skewed (skewness: 22.33)"
+    ],
+    [
+      "Data Pattern",
+      "sys_flags in unified_rw_org has 99.8% zero values"
+    ],
+    [
+      "Data Pattern",
+      "emp_count_vid in unified_rw_org is dominated by '0.0' (100.0% of records)"
+    ],
+    [
+      "Data Quality",
+      "entity_name in unified_rw_org has very high uniqueness (99.9%) - possibly an identifier"
+    ],
+    [
+      "Data Pattern",
+      "group_separator in unified_rw_org is dominated by ',' (100.0% of records)"
+    ],
+    [
+      "Data Pattern",
+      "decimal_char in unified_rw_org is dominated by '.' (100.0% of records)"
+    ],
+    [
+      "Data Pattern",
+      "annual_rev_vid in unified_rw_org is dominated by '0.0' (100.0% of records)"
+    ],
+    [
+      "Data Pattern",
+      "currency in unified_rw_org is dominated by 'USD' (100.0% of records)"
+    ],
+    [
+      "Temporal Coverage",
+      "modified_time in unified_rw_org spans 8522 days - good for trend analysis"
+    ],
+    [
+      "Temporal Coverage",
+      "created_time in unified_rw_org spans 8522 days - good for trend analysis"
+    ],
+    [
+      "Strong Correlation",
+      "quantity and totalpallets are highly correlated (r=0.823)"
+    ],
+    [
+      "Data Quality",
+      "quantity vs totalpallets relationship has many outliers (185 total)"
+    ],
+    [
+      "Data Quality",
+      "totalpallets vs totalgrossweight relationship has many outliers (181 total)"
+    ],
+    [
+      "Data Quality",
+      "quantity vs totalgrossweight relationship has many outliers (152 total)"
+    ],
+    [
+      "Data Quality",
+      "grossweight vs netweight relationship has many outliers (86 total)"
+    ],
+    [
+      "Data Quality",
+      "lineitemnumber vs donatedquantity relationship has many outliers (99 total)"
+    ],
+    [
+      "Pattern",
+      "userid='Unknown' and prop3='No' combination dominates (55.4% of data)"
+    ],
+    [
+      "Pattern",
+      "userid='Unknown' and prop4='0' combination dominates (53.2% of data)"
+    ],
+    [
+      "Pattern",
+      "userid='Unknown' and prop8='Member will pick up' combination dominates (79.4% of data)"
+    ],
+    [
+      "Pattern",
+      "shipmentmethod='PICKUP' and status='Acknowledged' combination dominates (62.6% of data)"
+    ],
+    [
+      "Pattern",
+      "status_flag='A' and currency='USD' combination dominates (87.2% of data)"
+    ],
+    [
+      "Pattern",
+      "status_flag='A' and currency_pattern='*###,##0.00' combination dominates (87.2% of data)"
+    ],
+    [
+      "Pattern",
+      "status_flag='A' and float_pattern='###,##0.###' combination dominates (87.2% of data)"
+    ],
+    [
+      "Pattern",
+      "domainid='Unknown' and domainname='Unknown' combination dominates (85.2% of data)"
+    ],
+    [
+      "Pattern",
+      "status_flag='I' and currency='USD' combination dominates (94.2% of data)"
+    ],
+    [
+      "Pattern",
+      "status_flag='I' and currency_pattern='*###,##0.00' combination dominates (94.2% of data)"
+    ],
+    [
+      "Pattern",
+      "status_flag='I' and float_pattern='###,##0.00' combination dominates (94.2% of data)"
+    ],
+    [
+      "Pattern",
+      "shipmentmethod='PICKUP' and source_database='choice' combination dominates (83.8% of data)"
+    ],
+    [
+      "Pattern",
+      "shipmentmethod='PICKUP' and source_table='choice_AMX_DONATION_HEADER' combination dominates (83.8% of data)"
+    ],
+    [
+      "Pattern",
+      "emp_count_vid='0.0' and group_separator=',' combination dominates (100.0% of data)"
+    ],
+    [
+      "Pattern",
+      "emp_count_vid='0.0' and created_by='USER_00000001' combination dominates (52.4% of data)"
+    ],
+    [
+      "Data Integration",
+      "Successfully created 3 unified datasets for cross-database analysis"
+    ],
+    [
+      "Data Coverage",
+      "Multi-source data available: 4 Choice datasets, 3 Agency datasets"
+    ],
+    [
+      "Data Volume",
+      "Substantial data volume (6,000 records) suitable for statistical analysis and trend identification"
+    ],
+    [
+      "Geographic Analysis",
+      "Geographic data available - enables location-based analysis and mapping"
+    ],
+    [
+      "Temporal Analysis",
+      "Temporal data available - enables trend analysis and seasonal pattern identification"
+    ],
+    [
+      "Quantitative Analysis",
+      "Quantitative data available - enables volume and efficiency analysis"
+    ]
+  ],
+  "analysis_stages_completed": [
+    "Data Extraction",
+    "ETL Pipeline",
+    "Univariate Analysis",
+    "Bivariate Analysis",
+    "Advanced Visualizations",
+    "Business Intelligence"
+  ],
+  "next_steps": [
+    "Deploy findings in production dashboard environment",
+    "Implement automated data pipelines based on ETL framework",
+    "Establish regular data quality monitoring",
+    "Develop predictive models using correlation insights",
+    "Create stakeholder-specific reporting dashboards",
+    "Schedule regular analysis updates and reviews"
+  ]
+}

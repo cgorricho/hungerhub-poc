@@ -1,0 +1,16 @@
+HungerHub Oracle Database Survey Summary
+==================================================
+
+Total Tables: 283
+Tables with Data: 178
+Total Rows: 7,672,554
+Total Size: ~2224.1 MB
+Sequential Extraction Time: ~136.4 minutes
+Parallel Extraction Time: ~45.5 minutes
+
+Recommended High Priority Tables:
+  - RWTXN_46.RW_ORDER_ITEM (230,282 rows)
+  - RWTXN_46.RW_ORDER_SUPPLIER (96,552 rows)
+  - RWTXN_46.RW_PURCHASE_ORDER (96,552 rows)
+  - RWTXN_46.AMX_DONATION_LINES (27,099 rows)
+  - RWTXN_46.AMX_DONATION_HEADER (1,389 rows)

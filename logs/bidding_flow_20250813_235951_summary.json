@@ -1,0 +1,232 @@
+{
+  "pipeline_id": "bidding_flow_20250813_235951",
+  "status": "failed",
+  "start_time": "2025-08-13T23:59:51.322886",
+  "end_time": "2025-08-14T00:15:26.602695",
+  "total_duration_minutes": 15.587996816666667,
+  "successful_stages": 3,
+  "total_stages": 5,
+  "stage_details": {
+    "connection_test": {
+      "stage": "connection_test",
+      "command": "python3 /home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py --test-connection",
+      "start_time": "2025-08-13T23:59:51.323393",
+      "duration_seconds": 1.200312,
+      "return_code": 0,
+      "stdout": "",
+      "stderr": "2025-08-13 23:59:51,622 - INFO - \ud83d\udcc1 Output directories ready: ['raw_csv', 'processed_parquet', 'unified', 'metadata', 'logs']\n2025-08-13 23:59:51,622 - INFO - \u2705 FullDataExtractor initialized\n2025-08-13 23:59:51,622 - INFO - \ud83d\udd17 Target: 52.43.135.66:1521/staging\n2025-08-13 23:59:51,622 - INFO - \u26a1 Method: sequential (proven optimal)\n2025-08-13 23:59:52,478 - INFO - \u2705 Connection successful!\n2025-08-13 23:59:52,479 - INFO - \ud83d\udcca Test query result: AMX_DONATION_LINES has 27,099 rows\n2025-08-13 23:59:52,479 - INFO - \ud83d\ude80 Connection test successful - ready for extraction!\n",
+      "status": "success"
+    },
+    "extract_high_priority": {
+      "stage": "extract_high_priority",
+      "command": "python3 /home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py --tier high_priority",
+      "start_time": "2025-08-13T23:59:52.524099",
+      "duration_seconds": 362.295102,
+      "return_code": 0,
+      "stdout": "",
+      "stderr": "2025-08-13 23:59:52,805 - INFO - \ud83d\udcc1 Output directories ready: ['raw_csv', 'processed_parquet', 'unified', 'metadata', 'logs']\n2025-08-13 23:59:52,805 - INFO - \u2705 FullDataExtractor initialized\n2025-08-13 23:59:52,806 - INFO - \ud83d\udd17 Target: 52.43.135.66:1521/staging\n2025-08-13 23:59:52,806 - INFO - \u26a1 Method: sequential (proven optimal)\n2025-08-13 23:59:52,806 - INFO - \ud83d\ude80 Starting high_priority extraction...\n2025-08-13 23:59:52,806 - INFO - \ud83d\udd34 ===== HIGH_PRIORITY TABLE EXTRACTION =====\n2025-08-13 23:59:52,806 - INFO - \ud83d\udcca Extracting 8 tables\n2025-08-13 23:59:52,806 - INFO - \u23f1\ufe0f  Estimated total time: ~8.6 minutes\n2025-08-13 23:59:52,806 - INFO - \n============================================================\n2025-08-13 23:59:52,806 - INFO - \ud83d\udd04 [1/8] AMX_DONATION_LINES\n2025-08-13 23:59:52,806 - INFO - \ud83c\udfaf Priority: CRITICAL\n2025-08-13 23:59:52,806 - INFO - \ud83d\udcdd Description: Core donation line items data\n2025-08-13 23:59:52,806 - INFO - \n\ud83d\udd04 Extracting AMX_DONATION_LINES...\n2025-08-13 23:59:52,806 - INFO -    \ud83d\udccb Full name: RWTXN_46.AMX_DONATION_LINES\n2025-08-13 23:59:52,806 - INFO -    \ud83d\udcca Expected rows: 27,099\n/home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py:317: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.\n  df = pd.read_sql_query(query, connection)\n2025-08-14 00:00:17,640 - INFO -    \u2705 Completed: 27,099 rows in 24.58s\n2025-08-14 00:00:17,641 - INFO -    \ud83d\ude80 Throughput: 1102.4 rows/sec\n2025-08-14 00:00:17,641 - INFO -    \ud83d\udcbe Memory: 25.25MB, Files: 5.15MB\n2025-08-14 00:00:17,641 - INFO -    \ud83d\udcc1 Saved to: 2 formats\n2025-08-14 00:00:17,672 - INFO - \n\ud83d\udcc8 Progress: 1/8 tables completed\n2025-08-14 00:00:17,672 - INFO - \u23f1\ufe0f  Elapsed: 0.4min, ETA: 2.9min\n2025-08-14 00:00:17,672 - INFO - \ud83d\udcca Total rows extracted: 27,099\n2025-08-14 00:00:17,672 - INFO - \n============================================================\n2025-08-14 00:00:17,672 - INFO - \ud83d\udd04 [2/8] AMX_DONATION_HEADER\n2025-08-14 00:00:17,672 - INFO - \ud83c\udfaf Priority: CRITICAL\n2025-08-14 00:00:17,672 - INFO - \ud83d\udcdd Description: Donation header/summary data\n2025-08-14 00:00:17,672 - INFO - \n\ud83d\udd04 Extracting AMX_DONATION_HEADER...\n2025-08-14 00:00:17,672 - INFO -    \ud83d\udccb Full name: RWTXN_46.AMX_DONATION_HEADER\n2025-08-14 00:00:17,672 - INFO -    \ud83d\udcca Expected rows: 1,389\n/home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py:317: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.\n  df = pd.read_sql_query(query, connection)\n2025-08-14 00:00:20,759 - INFO -    \u2705 Completed: 1,389 rows in 3.07s\n2025-08-14 00:00:20,759 - INFO -    \ud83d\ude80 Throughput: 453.0 rows/sec\n2025-08-14 00:00:20,759 - INFO -    \ud83d\udcbe Memory: 2.14MB, Files: 0.67MB\n2025-08-14 00:00:20,759 - INFO -    \ud83d\udcc1 Saved to: 2 formats\n2025-08-14 00:00:20,775 - INFO - \n\ud83d\udcc8 Progress: 2/8 tables completed\n2025-08-14 00:00:20,775 - INFO - \u23f1\ufe0f  Elapsed: 0.5min, ETA: 1.4min\n2025-08-14 00:00:20,775 - INFO - \ud83d\udcca Total rows extracted: 28,488\n2025-08-14 00:00:20,775 - INFO - \n============================================================\n2025-08-14 00:00:20,775 - INFO - \ud83d\udd04 [3/8] ACBIDS\n2025-08-14 00:00:20,775 - INFO - \ud83c\udfaf Priority: CRITICAL\n2025-08-14 00:00:20,775 - INFO - \ud83d\udcdd Description: Bidding sessions and auction data - KEY for donation flow\n2025-08-14 00:00:20,775 - INFO - \n\ud83d\udd04 Extracting ACBIDS...\n2025-08-14 00:00:20,775 - INFO -    \ud83d\udccb Full name: RWTXN_46.ACBIDS\n2025-08-14 00:00:20,775 - INFO -    \ud83d\udcca Expected rows: 15,000\n/home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py:317: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.\n  df = pd.read_sql_query(query, connection)\n2025-08-14 00:00:21,702 - INFO -    \u2705 Completed: 0 rows in 0.92s\n2025-08-14 00:00:21,703 - INFO -    \ud83d\ude80 Throughput: 0.0 rows/sec\n2025-08-14 00:00:21,703 - INFO -    \ud83d\udcbe Memory: 0.00MB, Files: 0.01MB\n2025-08-14 00:00:21,703 - INFO -    \ud83d\udcc1 Saved to: 2 formats\n2025-08-14 00:00:21,703 - WARNING -    \u26a0\ufe0f  Row count mismatch: expected 15,000, got 0\n2025-08-14 00:00:21,724 - INFO - \n\ud83d\udcc8 Progress: 3/8 tables completed\n2025-08-14 00:00:21,724 - INFO - \u23f1\ufe0f  Elapsed: 0.5min, ETA: 0.8min\n2025-08-14 00:00:21,724 - INFO - \ud83d\udcca Total rows extracted: 28,488\n2025-08-14 00:00:21,724 - INFO - \n============================================================\n2025-08-14 00:00:21,724 - INFO - \ud83d\udd04 [4/8] ACWINNER\n2025-08-14 00:00:21,724 - INFO - \ud83c\udfaf Priority: CRITICAL\n2025-08-14 00:00:21,724 - INFO - \ud83d\udcdd Description: Winner determination - ESSENTIAL for final destination tracking\n2025-08-14 00:00:21,724 - INFO - \n\ud83d\udd04 Extracting ACWINNER...\n2025-08-14 00:00:21,724 - INFO -    \ud83d\udccb Full name: RWTXN_46.ACWINNER\n2025-08-14 00:00:21,724 - INFO -    \ud83d\udcca Expected rows: 8,000\n/home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py:317: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.\n  df = pd.read_sql_query(query, connection)\n2025-08-14 00:00:22,653 - INFO -    \u2705 Completed: 0 rows in 0.93s\n2025-08-14 00:00:22,653 - INFO -    \ud83d\ude80 Throughput: 0.0 rows/sec\n2025-08-14 00:00:22,653 - INFO -    \ud83d\udcbe Memory: 0.00MB, Files: 0.01MB\n2025-08-14 00:00:22,653 - INFO -    \ud83d\udcc1 Saved to: 2 formats\n2025-08-14 00:00:22,653 - WARNING -    \u26a0\ufe0f  Row count mismatch: expected 8,000, got 0\n2025-08-14 00:00:22,671 - INFO - \n\ud83d\udcc8 Progress: 4/8 tables completed\n2025-08-14 00:00:22,671 - INFO - \u23f1\ufe0f  Elapsed: 0.5min, ETA: 0.5min\n2025-08-14 00:00:22,671 - INFO - \ud83d\udcca Total rows extracted: 28,488\n2025-08-14 00:00:22,671 - INFO - \n============================================================\n2025-08-14 00:00:22,671 - INFO - \ud83d\udd04 [5/8] ACSHARES\n2025-08-14 00:00:22,671 - INFO - \ud83c\udfaf Priority: CRITICAL\n2025-08-14 00:00:22,671 - INFO - \ud83d\udcdd Description: Bid share allocations and distribution tracking\n2025-08-14 00:00:22,671 - INFO - \n\ud83d\udd04 Extracting ACSHARES...\n2025-08-14 00:00:22,671 - INFO -    \ud83d\udccb Full name: RWTXN_46.ACSHARES\n2025-08-14 00:00:22,671 - INFO -    \ud83d\udcca Expected rows: 12,000\n/home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py:317: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.\n  df = pd.read_sql_query(query, connection)\n2025-08-14 00:00:23,821 - INFO -    \u2705 Completed: 273 rows in 1.14s\n2025-08-14 00:00:23,821 - INFO -    \ud83d\ude80 Throughput: 238.5 rows/sec\n2025-08-14 00:00:23,821 - INFO -    \ud83d\udcbe Memory: 0.07MB, Files: 0.05MB\n2025-08-14 00:00:23,821 - INFO -    \ud83d\udcc1 Saved to: 2 formats\n2025-08-14 00:00:23,821 - WARNING -    \u26a0\ufe0f  Row count mismatch: expected 12,000, got 273\n2025-08-14 00:00:23,844 - INFO - \n\ud83d\udcc8 Progress: 5/8 tables completed\n2025-08-14 00:00:23,844 - INFO - \u23f1\ufe0f  Elapsed: 0.5min, ETA: 0.3min\n2025-08-14 00:00:23,844 - INFO - \ud83d\udcca Total rows extracted: 28,761\n2025-08-14 00:00:23,844 - INFO - \n============================================================\n2025-08-14 00:00:23,844 - INFO - \ud83d\udd04 [6/8] RW_ORDER_ITEM\n2025-08-14 00:00:23,844 - INFO - \ud83c\udfaf Priority: HIGH\n2025-08-14 00:00:23,844 - INFO - \ud83d\udcdd Description: Order line items and procurement data\n2025-08-14 00:00:23,844 - INFO - \n\ud83d\udd04 Extracting RW_ORDER_ITEM...\n2025-08-14 00:00:23,844 - INFO -    \ud83d\udccb Full name: RWTXN_46.RW_ORDER_ITEM\n2025-08-14 00:00:23,844 - INFO -    \ud83d\udcca Expected rows: 230,282\n/home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py:317: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.\n  df = pd.read_sql_query(query, connection)\n2025-08-14 00:03:24,539 - INFO -    \u2705 Completed: 230,282 rows in 177.70s\n2025-08-14 00:03:24,539 - INFO -    \ud83d\ude80 Throughput: 1295.9 rows/sec\n2025-08-14 00:03:24,539 - INFO -    \ud83d\udcbe Memory: 426.39MB, Files: 65.51MB\n2025-08-14 00:03:24,539 - INFO -    \ud83d\udcc1 Saved to: 2 formats\n2025-08-14 00:03:24,630 - INFO - \n\ud83d\udcc8 Progress: 6/8 tables completed\n2025-08-14 00:03:24,630 - INFO - \u23f1\ufe0f  Elapsed: 3.5min, ETA: 1.2min\n2025-08-14 00:03:24,630 - INFO - \ud83d\udcca Total rows extracted: 259,043\n2025-08-14 00:03:24,630 - INFO - \n============================================================\n2025-08-14 00:03:24,630 - INFO - \ud83d\udd04 [7/8] RW_ORDER_SUPPLIER\n2025-08-14 00:03:24,630 - INFO - \ud83c\udfaf Priority: HIGH\n2025-08-14 00:03:24,630 - INFO - \ud83d\udcdd Description: Order-supplier relationship data\n2025-08-14 00:03:24,630 - INFO - \n\ud83d\udd04 Extracting RW_ORDER_SUPPLIER...\n2025-08-14 00:03:24,630 - INFO -    \ud83d\udccb Full name: RWTXN_46.RW_ORDER_SUPPLIER\n2025-08-14 00:03:24,630 - INFO -    \ud83d\udcca Expected rows: 96,552\n/home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py:317: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.\n  df = pd.read_sql_query(query, connection)\n2025-08-14 00:04:38,745 - INFO -    \u2705 Completed: 96,552 rows in 73.94s\n2025-08-14 00:04:38,746 - INFO -    \ud83d\ude80 Throughput: 1305.7 rows/sec\n2025-08-14 00:04:38,746 - INFO -    \ud83d\udcbe Memory: 24.38MB, Files: 6.52MB\n2025-08-14 00:04:38,746 - INFO -    \ud83d\udcc1 Saved to: 2 formats\n2025-08-14 00:04:38,765 - INFO - \n\ud83d\udcc8 Progress: 7/8 tables completed\n2025-08-14 00:04:38,765 - INFO - \u23f1\ufe0f  Elapsed: 4.8min, ETA: 0.7min\n2025-08-14 00:04:38,765 - INFO - \ud83d\udcca Total rows extracted: 355,595\n2025-08-14 00:04:38,765 - INFO - \n============================================================\n2025-08-14 00:04:38,765 - INFO - \ud83d\udd04 [8/8] RW_PURCHASE_ORDER\n2025-08-14 00:04:38,765 - INFO - \ud83c\udfaf Priority: HIGH\n2025-08-14 00:04:38,765 - INFO - \ud83d\udcdd Description: Purchase order header data\n2025-08-14 00:04:38,765 - INFO - \n\ud83d\udd04 Extracting RW_PURCHASE_ORDER...\n2025-08-14 00:04:38,765 - INFO -    \ud83d\udccb Full name: RWTXN_46.RW_PURCHASE_ORDER\n2025-08-14 00:04:38,765 - INFO -    \ud83d\udcca Expected rows: 96,552\n/home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py:317: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.\n  df = pd.read_sql_query(query, connection)\n2025-08-14 00:05:54,663 - INFO -    \u2705 Completed: 96,552 rows in 74.98s\n2025-08-14 00:05:54,664 - INFO -    \ud83d\ude80 Throughput: 1287.7 rows/sec\n2025-08-14 00:05:54,664 - INFO -    \ud83d\udcbe Memory: 126.10MB, Files: 23.69MB\n2025-08-14 00:05:54,664 - INFO -    \ud83d\udcc1 Saved to: 2 formats\n2025-08-14 00:05:54,717 - INFO - \n\ud83d\udcc8 Progress: 8/8 tables completed\n2025-08-14 00:05:54,717 - INFO - \u23f1\ufe0f  Elapsed: 6.0min, ETA: 0.0min\n2025-08-14 00:05:54,717 - INFO - \ud83d\udcca Total rows extracted: 452,147\n2025-08-14 00:05:54,717 - INFO - \n================================================================================\n2025-08-14 00:05:54,717 - INFO - \ud83c\udfc1 HIGH_PRIORITY EXTRACTION COMPLETED\n2025-08-14 00:05:54,717 - INFO - ================================================================================\n2025-08-14 00:05:54,717 - INFO - \u23f1\ufe0f  Total Duration: 6.03 minutes (361.9 seconds)\n2025-08-14 00:05:54,718 - INFO - \u2705 Successful Tables: 8/8\n2025-08-14 00:05:54,718 - INFO - \u274c Failed Tables: 0\n2025-08-14 00:05:54,718 - INFO - \ud83d\udcca Total Rows Extracted: 452,147\n2025-08-14 00:05:54,718 - INFO - \ud83d\ude80 Overall Throughput: 1249.3 rows/sec\n2025-08-14 00:05:54,718 - INFO - \ud83d\udcc8 Average Table Throughput: 710.4 rows/sec\n2025-08-14 00:05:54,718 - INFO - \ud83d\udcbe Total Files Size: 101.61 MB\n2025-08-14 00:05:54,719 - INFO - \n\ud83d\udcbe Metadata saved to: data/analysis/high_priority_extraction_metadata.json\n2025-08-14 00:05:54,719 - INFO - \ud83c\udf89 SUCCESS: All tables extracted successfully!\n2025-08-14 00:05:54,719 - INFO - \ud83d\udcca Ready for ETL processing with 452,147 records\n",
+      "status": "success"
+    },
+    "extract_medium_priority": {
+      "stage": "extract_medium_priority",
+      "command": "python3 /home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py --tier medium_priority",
+      "start_time": "2025-08-14T00:05:54.819830",
+      "duration_seconds": 568.922107,
+      "return_code": 0,
+      "stdout": "",
+      "stderr": "2025-08-14 00:05:55,434 - INFO - \ud83d\udcc1 Output directories ready: ['raw_csv', 'processed_parquet', 'unified', 'metadata', 'logs']\n2025-08-14 00:05:55,434 - INFO - \u2705 FullDataExtractor initialized\n2025-08-14 00:05:55,434 - INFO - \ud83d\udd17 Target: 52.43.135.66:1521/staging\n2025-08-14 00:05:55,434 - INFO - \u26a1 Method: sequential (proven optimal)\n2025-08-14 00:05:55,434 - INFO - \ud83d\ude80 Starting medium_priority extraction...\n2025-08-14 00:05:55,434 - INFO - \ud83d\udd34 ===== MEDIUM_PRIORITY TABLE EXTRACTION =====\n2025-08-14 00:05:55,434 - INFO - \ud83d\udcca Extracting 7 tables\n2025-08-14 00:05:55,434 - INFO - \u23f1\ufe0f  Estimated total time: ~2.8 minutes\n2025-08-14 00:05:55,434 - INFO - \n============================================================\n2025-08-14 00:05:55,434 - INFO - \ud83d\udd04 [1/7] AMX_OFFER_HEADER\n2025-08-14 00:05:55,435 - INFO - \ud83c\udfaf Priority: MEDIUM\n2025-08-14 00:05:55,435 - INFO - \ud83d\udcdd Description: Food offer headers\n2025-08-14 00:05:55,435 - INFO - \n\ud83d\udd04 Extracting AMX_OFFER_HEADER...\n2025-08-14 00:05:55,435 - INFO -    \ud83d\udccb Full name: RWTXN_46.AMX_OFFER_HEADER\n2025-08-14 00:05:55,435 - INFO -    \ud83d\udcca Expected rows: 26,343\n/home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py:317: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.\n  df = pd.read_sql_query(query, connection)\n2025-08-14 00:06:40,107 - INFO -    \u2705 Completed: 26,343 rows in 44.20s\n2025-08-14 00:06:40,107 - INFO -    \ud83d\ude80 Throughput: 595.9 rows/sec\n2025-08-14 00:06:40,107 - INFO -    \ud83d\udcbe Memory: 58.64MB, Files: 14.11MB\n2025-08-14 00:06:40,107 - INFO -    \ud83d\udcc1 Saved to: 2 formats\n2025-08-14 00:06:40,149 - INFO - \n\ud83d\udcc8 Progress: 1/7 tables completed\n2025-08-14 00:06:40,149 - INFO - \u23f1\ufe0f  Elapsed: 0.7min, ETA: 4.5min\n2025-08-14 00:06:40,149 - INFO - \ud83d\udcca Total rows extracted: 26,343\n2025-08-14 00:06:40,149 - INFO - \n============================================================\n2025-08-14 00:06:40,150 - INFO - \ud83d\udd04 [2/7] AMX_OFFER_LINES\n2025-08-14 00:06:40,150 - INFO - \ud83c\udfaf Priority: MEDIUM\n2025-08-14 00:06:40,150 - INFO - \ud83d\udcdd Description: Food offer line items\n2025-08-14 00:06:40,150 - INFO - \n\ud83d\udd04 Extracting AMX_OFFER_LINES...\n2025-08-14 00:06:40,150 - INFO -    \ud83d\udccb Full name: RWTXN_46.AMX_OFFER_LINES\n2025-08-14 00:06:40,150 - INFO -    \ud83d\udcca Expected rows: 91,783\n/home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py:317: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.\n  df = pd.read_sql_query(query, connection)\n2025-08-14 00:07:54,799 - INFO -    \u2705 Completed: 91,783 rows in 73.92s\n2025-08-14 00:07:54,800 - INFO -    \ud83d\ude80 Throughput: 1241.6 rows/sec\n2025-08-14 00:07:54,800 - INFO -    \ud83d\udcbe Memory: 88.74MB, Files: 17.77MB\n2025-08-14 00:07:54,800 - INFO -    \ud83d\udcc1 Saved to: 2 formats\n2025-08-14 00:07:54,847 - INFO - \n\ud83d\udcc8 Progress: 2/7 tables completed\n2025-08-14 00:07:54,847 - INFO - \u23f1\ufe0f  Elapsed: 2.0min, ETA: 5.0min\n2025-08-14 00:07:54,847 - INFO - \ud83d\udcca Total rows extracted: 118,126\n2025-08-14 00:07:54,847 - INFO - \n============================================================\n2025-08-14 00:07:54,847 - INFO - \ud83d\udd04 [3/7] RW_ORG\n2025-08-14 00:07:54,847 - INFO - \ud83c\udfaf Priority: MEDIUM\n2025-08-14 00:07:54,847 - INFO - \ud83d\udcdd Description: Organization master data - ESSENTIAL for final destination tracking\n2025-08-14 00:07:54,847 - INFO - \n\ud83d\udd04 Extracting RW_ORG...\n2025-08-14 00:07:54,847 - INFO -    \ud83d\udccb Full name: RWTXN_46.RW_ORG\n2025-08-14 00:07:54,847 - INFO -    \ud83d\udcca Expected rows: 630\n/home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py:317: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.\n  df = pd.read_sql_query(query, connection)\n2025-08-14 00:07:56,390 - INFO -    \u2705 Completed: 630 rows in 1.53s\n2025-08-14 00:07:56,390 - INFO -    \ud83d\ude80 Throughput: 411.7 rows/sec\n2025-08-14 00:07:56,390 - INFO -    \ud83d\udcbe Memory: 0.91MB, Files: 0.22MB\n2025-08-14 00:07:56,390 - INFO -    \ud83d\udcc1 Saved to: 2 formats\n2025-08-14 00:07:56,407 - INFO - \n\ud83d\udcc8 Progress: 3/7 tables completed\n2025-08-14 00:07:56,407 - INFO - \u23f1\ufe0f  Elapsed: 2.0min, ETA: 2.7min\n2025-08-14 00:07:56,407 - INFO - \ud83d\udcca Total rows extracted: 118,756\n2025-08-14 00:07:56,407 - INFO - \n============================================================\n2025-08-14 00:07:56,407 - INFO - \ud83d\udd04 [4/7] ACACTION\n2025-08-14 00:07:56,407 - INFO - \ud83c\udfaf Priority: MEDIUM\n2025-08-14 00:07:56,407 - INFO - \ud83d\udcdd Description: Bidding actions and events log\n2025-08-14 00:07:56,407 - INFO - \n\ud83d\udd04 Extracting ACACTION...\n2025-08-14 00:07:56,407 - INFO -    \ud83d\udccb Full name: RWTXN_46.ACACTION\n2025-08-14 00:07:56,407 - INFO -    \ud83d\udcca Expected rows: 5,000\n/home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py:317: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.\n  df = pd.read_sql_query(query, connection)\n2025-08-14 00:07:57,351 - INFO -    \u2705 Completed: 0 rows in 0.94s\n2025-08-14 00:07:57,352 - INFO -    \ud83d\ude80 Throughput: 0.0 rows/sec\n2025-08-14 00:07:57,352 - INFO -    \ud83d\udcbe Memory: 0.00MB, Files: 0.00MB\n2025-08-14 00:07:57,352 - INFO -    \ud83d\udcc1 Saved to: 2 formats\n2025-08-14 00:07:57,352 - WARNING -    \u26a0\ufe0f  Row count mismatch: expected 5,000, got 0\n2025-08-14 00:07:57,373 - INFO - \n\ud83d\udcc8 Progress: 4/7 tables completed\n2025-08-14 00:07:57,373 - INFO - \u23f1\ufe0f  Elapsed: 2.0min, ETA: 1.5min\n2025-08-14 00:07:57,373 - INFO - \ud83d\udcca Total rows extracted: 118,756\n2025-08-14 00:07:57,373 - INFO - \n============================================================\n2025-08-14 00:07:57,373 - INFO - \ud83d\udd04 [5/7] ACBIDS_ARCHIVE\n2025-08-14 00:07:57,373 - INFO - \ud83c\udfaf Priority: MEDIUM\n2025-08-14 00:07:57,373 - INFO - \ud83d\udcdd Description: Archived bidding sessions for historical analysis\n2025-08-14 00:07:57,373 - INFO - \n\ud83d\udd04 Extracting ACBIDS_ARCHIVE...\n2025-08-14 00:07:57,373 - INFO -    \ud83d\udccb Full name: RWTXN_46.ACBIDS_ARCHIVE\n2025-08-14 00:07:57,373 - INFO -    \ud83d\udcca Expected rows: 20,000\n/home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py:317: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.\n  df = pd.read_sql_query(query, connection)\n2025-08-14 00:07:59,549 - INFO -    \u2705 Completed: 1,108 rows in 2.16s\n2025-08-14 00:07:59,549 - INFO -    \ud83d\ude80 Throughput: 513.1 rows/sec\n2025-08-14 00:07:59,549 - INFO -    \ud83d\udcbe Memory: 0.61MB, Files: 0.22MB\n2025-08-14 00:07:59,549 - INFO -    \ud83d\udcc1 Saved to: 2 formats\n2025-08-14 00:07:59,549 - WARNING -    \u26a0\ufe0f  Row count mismatch: expected 20,000, got 1,108\n2025-08-14 00:07:59,566 - INFO - \n\ud83d\udcc8 Progress: 5/7 tables completed\n2025-08-14 00:07:59,566 - INFO - \u23f1\ufe0f  Elapsed: 2.1min, ETA: 0.8min\n2025-08-14 00:07:59,566 - INFO - \ud83d\udcca Total rows extracted: 119,864\n2025-08-14 00:07:59,566 - INFO - \n============================================================\n2025-08-14 00:07:59,566 - INFO - \ud83d\udd04 [6/7] ACSHARES_ARCHIVE\n2025-08-14 00:07:59,566 - INFO - \ud83c\udfaf Priority: MEDIUM\n2025-08-14 00:07:59,566 - INFO - \ud83d\udcdd Description: Archived bid share allocations\n2025-08-14 00:07:59,566 - INFO - \n\ud83d\udd04 Extracting ACSHARES_ARCHIVE...\n2025-08-14 00:07:59,566 - INFO -    \ud83d\udccb Full name: RWTXN_46.ACSHARES_ARCHIVE\n2025-08-14 00:07:59,566 - INFO -    \ud83d\udcca Expected rows: 15,000\n/home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py:317: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.\n  df = pd.read_sql_query(query, connection)\n2025-08-14 00:15:18,225 - INFO -    \u2705 Completed: 573,114 rows in 435.44s\n2025-08-14 00:15:18,225 - INFO -    \ud83d\ude80 Throughput: 1316.2 rows/sec\n2025-08-14 00:15:18,225 - INFO -    \ud83d\udcbe Memory: 212.27MB, Files: 67.26MB\n2025-08-14 00:15:18,225 - INFO -    \ud83d\udcc1 Saved to: 2 formats\n2025-08-14 00:15:18,225 - WARNING -    \u26a0\ufe0f  Row count mismatch: expected 15,000, got 573,114\n2025-08-14 00:15:18,296 - INFO - \n\ud83d\udcc8 Progress: 6/7 tables completed\n2025-08-14 00:15:18,297 - INFO - \u23f1\ufe0f  Elapsed: 9.4min, ETA: 1.6min\n2025-08-14 00:15:18,297 - INFO - \ud83d\udcca Total rows extracted: 692,978\n2025-08-14 00:15:18,297 - INFO - \n============================================================\n2025-08-14 00:15:18,297 - INFO - \ud83d\udd04 [7/7] RW_USER\n2025-08-14 00:15:18,297 - INFO - \ud83c\udfaf Priority: MEDIUM\n2025-08-14 00:15:18,297 - INFO - \ud83d\udcdd Description: User management data\n2025-08-14 00:15:18,297 - INFO - \n\ud83d\udd04 Extracting RW_USER...\n2025-08-14 00:15:18,297 - INFO -    \ud83d\udccb Full name: RWTXN_46.RW_USER\n2025-08-14 00:15:18,297 - INFO -    \ud83d\udcca Expected rows: 5,970\n/home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py:317: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.\n  df = pd.read_sql_query(query, connection)\n2025-08-14 00:15:23,604 - INFO -    \u2705 Completed: 5,970 rows in 5.24s\n2025-08-14 00:15:23,604 - INFO -    \ud83d\ude80 Throughput: 1138.6 rows/sec\n2025-08-14 00:15:23,604 - INFO -    \ud83d\udcbe Memory: 6.95MB, Files: 1.85MB\n2025-08-14 00:15:23,604 - INFO -    \ud83d\udcc1 Saved to: 2 formats\n2025-08-14 00:15:23,623 - INFO - \n\ud83d\udcc8 Progress: 7/7 tables completed\n2025-08-14 00:15:23,623 - INFO - \u23f1\ufe0f  Elapsed: 9.5min, ETA: 0.0min\n2025-08-14 00:15:23,623 - INFO - \ud83d\udcca Total rows extracted: 698,948\n2025-08-14 00:15:23,623 - INFO - \n================================================================================\n2025-08-14 00:15:23,623 - INFO - \ud83c\udfc1 MEDIUM_PRIORITY EXTRACTION COMPLETED\n2025-08-14 00:15:23,623 - INFO - ================================================================================\n2025-08-14 00:15:23,623 - INFO - \u23f1\ufe0f  Total Duration: 9.47 minutes (568.2 seconds)\n2025-08-14 00:15:23,623 - INFO - \u2705 Successful Tables: 7/7\n2025-08-14 00:15:23,623 - INFO - \u274c Failed Tables: 0\n2025-08-14 00:15:23,623 - INFO - \ud83d\udcca Total Rows Extracted: 698,948\n2025-08-14 00:15:23,624 - INFO - \ud83d\ude80 Overall Throughput: 1230.1 rows/sec\n2025-08-14 00:15:23,624 - INFO - \ud83d\udcc8 Average Table Throughput: 745.3 rows/sec\n2025-08-14 00:15:23,624 - INFO - \ud83d\udcbe Total Files Size: 101.43 MB\n2025-08-14 00:15:23,625 - INFO - \n\ud83d\udcbe Metadata saved to: data/analysis/medium_priority_extraction_metadata.json\n2025-08-14 00:15:23,625 - INFO - \ud83c\udf89 SUCCESS: All tables extracted successfully!\n2025-08-14 00:15:23,625 - INFO - \ud83d\udcca Ready for ETL processing with 698,948 records\n",
+      "status": "success"
+    },
+    "data_verification": {
+      "total_files_found": 23,
+      "total_records": 1177595,
+      "required_tables_status": {
+        "AMX_DONATION_HEADER": {
+          "status": "found",
+          "rows": 1389,
+          "columns": 30
+        },
+        "AMX_DONATION_LINES": {
+          "status": "found",
+          "rows": 27099,
+          "columns": 26
+        },
+        "ACBIDS": {
+          "status": "found",
+          "rows": 0,
+          "columns": 24
+        },
+        "ACWINNER": {
+          "status": "found",
+          "rows": 0,
+          "columns": 12
+        },
+        "ACSHARES": {
+          "status": "found",
+          "rows": 273,
+          "columns": 17
+        },
+        "RW_ORG": {
+          "status": "found",
+          "rows": 630,
+          "columns": 44
+        }
+      },
+      "all_files": [
+        {
+          "name": "ACSHARES_ARCHIVE",
+          "rows": 573114,
+          "columns": 19,
+          "size_mb": 1.502145767211914
+        },
+        {
+          "name": "agency_DOCUMENTHEADER_sample",
+          "rows": 2000,
+          "columns": 35,
+          "size_mb": 0.07569503784179688
+        },
+        {
+          "name": "choice_AMX_DONATION_LINES_sample",
+          "rows": 5000,
+          "columns": 26,
+          "size_mb": 0.15527820587158203
+        },
+        {
+          "name": "ACBIDS_ARCHIVE",
+          "rows": 1108,
+          "columns": 26,
+          "size_mb": 0.05000495910644531
+        },
+        {
+          "name": "ACWINNER",
+          "rows": 0,
+          "columns": 12,
+          "size_mb": 0.0054111480712890625
+        },
+        {
+          "name": "RW_PURCHASE_ORDER",
+          "rows": 96552,
+          "columns": 51,
+          "size_mb": 3.49407958984375
+        },
+        {
+          "name": "agency_RW_ORG_sample",
+          "rows": 2000,
+          "columns": 50,
+          "size_mb": 0.1317424774169922
+        },
+        {
+          "name": "AMX_OFFER_LINES",
+          "rows": 91783,
+          "columns": 32,
+          "size_mb": 2.788280487060547
+        },
+        {
+          "name": "AMX_OFFER_HEADER",
+          "rows": 26343,
+          "columns": 46,
+          "size_mb": 2.46494197845459
+        },
+        {
+          "name": "AMX_DONATION_HEADER",
+          "rows": 1389,
+          "columns": 30,
+          "size_mb": 0.1698436737060547
+        },
+        {
+          "name": "ACACTION",
+          "rows": 0,
+          "columns": 1,
+          "size_mb": 0.0009593963623046875
+        },
+        {
+          "name": "choice_DOCUMENTHEADER_sample",
+          "rows": 1000,
+          "columns": 51,
+          "size_mb": 0.16000938415527344
+        },
+        {
+          "name": "choice_RW_ORG_sample",
+          "rows": 500,
+          "columns": 44,
+          "size_mb": 0.050904273986816406
+        },
+        {
+          "name": "choice_AMX_DONATION_HEADER_sample",
+          "rows": 1000,
+          "columns": 30,
+          "size_mb": 0.13904666900634766
+        },
+        {
+          "name": "AMX_DONATION_LINES",
+          "rows": 27099,
+          "columns": 26,
+          "size_mb": 0.803858757019043
+        },
+        {
+          "name": "RW_ORG",
+          "rows": 630,
+          "columns": 44,
+          "size_mb": 0.05866718292236328
+        },
+        {
+          "name": "ACBIDS",
+          "rows": 0,
+          "columns": 24,
+          "size_mb": 0.010117530822753906
+        },
+        {
+          "name": "choice_DOCUMENTLINES_sample",
+          "rows": 5000,
+          "columns": 64,
+          "size_mb": 0.23077869415283203
+        },
+        {
+          "name": "agency_DOCUMENTLINES_sample",
+          "rows": 10000,
+          "columns": 57,
+          "size_mb": 0.1920185089111328
+        },
+        {
+          "name": "RW_ORDER_ITEM",
+          "rows": 230282,
+          "columns": 75,
+          "size_mb": 2.1825180053710938
+        },
+        {
+          "name": "RW_USER",
+          "rows": 5970,
+          "columns": 37,
+          "size_mb": 0.47508811950683594
+        },
+        {
+          "name": "RW_ORDER_SUPPLIER",
+          "rows": 96552,
+          "columns": 7,
+          "size_mb": 1.2904605865478516
+        },
+        {
+          "name": "ACSHARES",
+          "rows": 273,
+          "columns": 17,
+          "size_mb": 0.023668289184570312
+        }
+      ],
+      "ready_for_transformation": true
+    },
+    "bidding_transformation": {
+      "stage": "bidding_transformation",
+      "command": "python3 /home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/scripts/bidding_flow_transformer.py",
+      "start_time": "2025-08-14T00:15:24.354349",
+      "duration_seconds": 2.248015,
+      "return_code": 1,
+      "stdout": "",
+      "stderr": "2025-08-14 00:15:24,856 - INFO - \ud83d\udd04 BiddingFlowTransformer initialized\n2025-08-14 00:15:24,856 - INFO - \ud83d\udcc1 Input dir: data/processed/real\n2025-08-14 00:15:24,856 - INFO - \ud83d\udcc1 Output dir: data/processed/unified_real\n2025-08-14 00:15:24,856 - INFO - \ud83d\ude80 Starting full bidding flow transformation...\n2025-08-14 00:15:24,856 - INFO - ================================================================================\n2025-08-14 00:15:24,856 - INFO - \ud83d\udcca Found 23 extracted tables:\n2025-08-14 00:15:24,856 - INFO -    - ACACTION\n2025-08-14 00:15:24,856 - INFO -    - ACBIDS\n2025-08-14 00:15:24,856 - INFO -    - ACBIDS_ARCHIVE\n2025-08-14 00:15:24,856 - INFO -    - ACSHARES\n2025-08-14 00:15:24,856 - INFO -    - ACSHARES_ARCHIVE\n2025-08-14 00:15:24,856 - INFO -    - ACWINNER\n2025-08-14 00:15:24,856 - INFO -    - AMX_DONATION_HEADER\n2025-08-14 00:15:24,856 - INFO -    - AMX_DONATION_LINES\n2025-08-14 00:15:24,856 - INFO -    - AMX_OFFER_HEADER\n2025-08-14 00:15:24,856 - INFO -    - AMX_OFFER_LINES\n2025-08-14 00:15:24,856 - INFO -    - RW_ORDER_ITEM\n2025-08-14 00:15:24,856 - INFO -    - RW_ORDER_SUPPLIER\n2025-08-14 00:15:24,856 - INFO -    - RW_ORG\n2025-08-14 00:15:24,856 - INFO -    - RW_PURCHASE_ORDER\n2025-08-14 00:15:24,857 - INFO -    - RW_USER\n2025-08-14 00:15:24,857 - INFO -    - agency_DOCUMENTHEADER_sample\n2025-08-14 00:15:24,857 - INFO -    - agency_DOCUMENTLINES_sample\n2025-08-14 00:15:24,857 - INFO -    - agency_RW_ORG_sample\n2025-08-14 00:15:24,857 - INFO -    - choice_AMX_DONATION_HEADER_sample\n2025-08-14 00:15:24,857 - INFO -    - choice_AMX_DONATION_LINES_sample\n2025-08-14 00:15:24,857 - INFO -    - choice_DOCUMENTHEADER_sample\n2025-08-14 00:15:24,857 - INFO -    - choice_DOCUMENTLINES_sample\n2025-08-14 00:15:24,857 - INFO -    - choice_RW_ORG_sample\n2025-08-14 00:15:24,857 - INFO - \ud83d\udd04 Loading core tables for bidding flow analysis...\n2025-08-14 00:15:24,882 - INFO - \u2705 Loaded AMX_DONATION_HEADER: 1,389 rows, 30 columns\n2025-08-14 00:15:24,904 - INFO - \u2705 Loaded AMX_DONATION_LINES: 27,099 rows, 26 columns\n2025-08-14 00:15:24,941 - INFO - \u2705 Loaded ACBIDS: 0 rows, 24 columns\n2025-08-14 00:15:24,945 - INFO - \u2705 Loaded ACWINNER: 0 rows, 12 columns\n2025-08-14 00:15:24,950 - INFO - \u2705 Loaded ACSHARES: 273 rows, 17 columns\n2025-08-14 00:15:24,956 - INFO - \u2705 Loaded RW_ORG: 630 rows, 44 columns\n2025-08-14 00:15:24,960 - INFO - \u2705 Loaded ACACTION: 0 rows, 1 columns\n2025-08-14 00:15:24,963 - INFO - \u2705 Loaded ACBIDS_ARCHIVE: 1,108 rows, 26 columns\n2025-08-14 00:15:25,062 - INFO - \u2705 Loaded ACSHARES_ARCHIVE: 573,114 rows, 19 columns\n2025-08-14 00:15:25,394 - INFO - \u2705 Loaded RW_ORDER_ITEM: 230,282 rows, 75 columns\n2025-08-14 00:15:26,173 - INFO - \u2705 Loaded RW_ORDER_SUPPLIER: 96,552 rows, 7 columns\n2025-08-14 00:15:26,285 - INFO - \u2705 Loaded RW_PURCHASE_ORDER: 96,552 rows, 51 columns\n2025-08-14 00:15:26,522 - INFO - \u2705 Loaded 12 core tables successfully\n2025-08-14 00:15:26,522 - INFO - \ud83d\udd0d Analyzing table relationships...\n2025-08-14 00:15:26,525 - INFO - \ud83d\udccb donation_header:\n2025-08-14 00:15:26,525 - INFO -    - Columns: 30\n2025-08-14 00:15:26,525 - INFO -    - Join keys: ['DONATIONNUMBER']\n2025-08-14 00:15:26,527 - INFO - \ud83d\udccb donation_lines:\n2025-08-14 00:15:26,527 - INFO -    - Columns: 26\n2025-08-14 00:15:26,527 - INFO -    - Join keys: ['DONATIONNUMBER']\n2025-08-14 00:15:26,527 - INFO - \ud83d\udccb bids:\n2025-08-14 00:15:26,527 - INFO -    - Columns: 24\n2025-08-14 00:15:26,527 - INFO -    - Join keys: []\n2025-08-14 00:15:26,527 - INFO - \ud83d\udccb winners:\n2025-08-14 00:15:26,527 - INFO -    - Columns: 12\n2025-08-14 00:15:26,527 - INFO -    - Join keys: []\n2025-08-14 00:15:26,527 - INFO - \ud83d\udccb shares:\n2025-08-14 00:15:26,527 - INFO -    - Columns: 17\n2025-08-14 00:15:26,527 - INFO -    - Join keys: []\n2025-08-14 00:15:26,527 - INFO - \ud83d\udccb organizations:\n2025-08-14 00:15:26,527 - INFO -    - Columns: 44\n2025-08-14 00:15:26,527 - INFO -    - Join keys: ['ORG_ID']\n2025-08-14 00:15:26,527 - INFO - \ud83d\udccb bid_actions:\n2025-08-14 00:15:26,527 - INFO -    - Columns: 1\n2025-08-14 00:15:26,527 - INFO -    - Join keys: []\n2025-08-14 00:15:26,527 - INFO - \ud83d\udccb bids_archive:\n2025-08-14 00:15:26,527 - INFO -    - Columns: 26\n2025-08-14 00:15:26,527 - INFO -    - Join keys: []\n2025-08-14 00:15:26,527 - INFO - \ud83d\udccb shares_archive:\n2025-08-14 00:15:26,527 - INFO -    - Columns: 19\n2025-08-14 00:15:26,527 - INFO -    - Join keys: []\n2025-08-14 00:15:26,527 - INFO - \ud83d\udccb order_items:\n2025-08-14 00:15:26,527 - INFO -    - Columns: 75\n2025-08-14 00:15:26,527 - INFO -    - Join keys: []\n2025-08-14 00:15:26,527 - INFO - \ud83d\udccb order_supplier:\n2025-08-14 00:15:26,527 - INFO -    - Columns: 7\n2025-08-14 00:15:26,527 - INFO -    - Join keys: []\n2025-08-14 00:15:26,528 - INFO - \ud83d\udccb purchase_orders:\n2025-08-14 00:15:26,528 - INFO -    - Columns: 51\n2025-08-14 00:15:26,528 - INFO -    - Join keys: []\n2025-08-14 00:15:26,528 - INFO - \ud83d\udd04 Creating unified donation flow dataset...\n2025-08-14 00:15:26,528 - INFO - \ud83d\udcca Base donation headers: 1,389 records\n2025-08-14 00:15:26,529 - ERROR - \ud83d\udca5 Transformation failed: \"Column(s) ['DONATIONLINENUMBER', 'TOTALVALUE', 'UNITPRICE'] do not exist\"\n2025-08-14 00:15:26,529 - ERROR - \u23f1\ufe0f  Failed after: 0:00:01.672779\n2025-08-14 00:15:26,529 - ERROR - \ud83d\uded1 Transformation failed\n",
+      "status": "failed"
+    }
+  },
+  "extracted_data_stats": {
+    "total_files": 23,
+    "total_records": 1177595
+  }
+}

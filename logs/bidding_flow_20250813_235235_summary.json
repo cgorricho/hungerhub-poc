@@ -1,0 +1,21 @@
+{
+  "pipeline_id": "bidding_flow_20250813_235235",
+  "status": "failed",
+  "start_time": "2025-08-13T23:52:35.595026",
+  "end_time": "2025-08-13T23:52:35.965876",
+  "total_duration_minutes": 0.006180833333333333,
+  "successful_stages": 0,
+  "total_stages": 1,
+  "stage_details": {
+    "connection_test": {
+      "stage": "connection_test",
+      "command": "python3 /home/cgorricho/apps/TAG-Techbridge/TAG-TB-Purpose-Project/2week_poc_execution/hungerhub_poc/src/data_extraction/full_data_extractor.py --test-connection",
+      "start_time": "2025-08-13T23:52:35.595692",
+      "duration_seconds": 0.369697,
+      "return_code": 1,
+      "stdout": "",
+      "stderr": "2025-08-13 23:52:35,922 - INFO - \ud83d\udcc1 Output directories ready: ['raw_csv', 'processed_parquet', 'unified', 'metadata', 'logs']\n2025-08-13 23:52:35,922 - INFO - \u2705 FullDataExtractor initialized\n2025-08-13 23:52:35,922 - INFO - \ud83d\udd17 Target: None:1521/None\n2025-08-13 23:52:35,922 - INFO - \u26a1 Method: sequential (proven optimal)\n2025-08-13 23:52:35,923 - ERROR - Connection failed: DPI-1047: Cannot locate a 64-bit Oracle Client library: \"libclntsh.so: cannot open shared object file: No such file or directory\". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help\n2025-08-13 23:52:35,923 - ERROR - \u274c Connection failed: DPI-1047: Cannot locate a 64-bit Oracle Client library: \"libclntsh.so: cannot open shared object file: No such file or directory\". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help\n2025-08-13 23:52:35,923 - ERROR - \ud83d\uded1 Connection test failed\n",
+      "status": "failed"
+    }
+  }
+}

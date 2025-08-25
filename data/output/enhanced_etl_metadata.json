@@ -1,0 +1,48 @@
+{
+  "etl_timestamp": "2025-08-07T19:09:50.696038",
+  "etl_version": "Enhanced v2.0",
+  "connection_mode": "MOCK",
+  "datasets_created": [
+    "people",
+    "services"
+  ],
+  "total_records": {
+    "people": 35,
+    "services": 219
+  },
+  "data_sources": [
+    "Choice",
+    "AgencyExpress"
+  ],
+  "validation_results": {
+    "total_validations": 6,
+    "avg_quality_score": 100.0,
+    "validation_summary": [
+      {
+        "type": "dict",
+        "score": 100.0
+      },
+      {
+        "type": "dict",
+        "score": 100.0
+      },
+      {
+        "type": "dict",
+        "score": 100.0
+      },
+      {
+        "type": "dict",
+        "score": 100.0
+      },
+      {
+        "type": "dict",
+        "score": 100.0
+      },
+      {
+        "type": "dict",
+        "score": 100.0
+      }
+    ]
+  },
+  "next_scheduled_run": "2025-08-08T19:09:50.696116"
+}

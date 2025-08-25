@@ -1,0 +1,150 @@
+{
+  "extraction_type": "high_priority",
+  "extraction_method": "sequential_optimal",
+  "start_time": "2025-08-13T23:59:52.806247",
+  "end_time": "2025-08-14T00:05:54.718730",
+  "duration_seconds": 361.9116225242615,
+  "duration_minutes": 6.031860375404358,
+  "total_rows": 452147,
+  "successful_tables": 8,
+  "failed_tables": 0,
+  "overall_throughput": 1249.3298691165671,
+  "extraction_results": [
+    {
+      "table_name": "AMX_DONATION_LINES",
+      "full_name": "RWTXN_46.AMX_DONATION_LINES",
+      "rows_extracted": 27099,
+      "expected_rows": 27099,
+      "columns": 26,
+      "duration_seconds": 24.58,
+      "throughput_rows_per_sec": 1102.4,
+      "memory_usage_mb": 25.25,
+      "file_size_mb": 5.15,
+      "saved_files": [
+        "data/raw/oracle/AMX_DONATION_LINES.csv",
+        "data/processed/real/AMX_DONATION_LINES.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-14T00:00:17.640915"
+    },
+    {
+      "table_name": "AMX_DONATION_HEADER",
+      "full_name": "RWTXN_46.AMX_DONATION_HEADER",
+      "rows_extracted": 1389,
+      "expected_rows": 1389,
+      "columns": 30,
+      "duration_seconds": 3.07,
+      "throughput_rows_per_sec": 453.0,
+      "memory_usage_mb": 2.14,
+      "file_size_mb": 0.67,
+      "saved_files": [
+        "data/raw/oracle/AMX_DONATION_HEADER.csv",
+        "data/processed/real/AMX_DONATION_HEADER.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-14T00:00:20.759663"
+    },
+    {
+      "table_name": "ACBIDS",
+      "full_name": "RWTXN_46.ACBIDS",
+      "rows_extracted": 0,
+      "expected_rows": 15000,
+      "columns": 24,
+      "duration_seconds": 0.92,
+      "throughput_rows_per_sec": 0.0,
+      "memory_usage_mb": 0.0,
+      "file_size_mb": 0.01,
+      "saved_files": [
+        "data/raw/oracle/ACBIDS.csv",
+        "data/processed/real/ACBIDS.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-14T00:00:21.702945"
+    },
+    {
+      "table_name": "ACWINNER",
+      "full_name": "RWTXN_46.ACWINNER",
+      "rows_extracted": 0,
+      "expected_rows": 8000,
+      "columns": 12,
+      "duration_seconds": 0.93,
+      "throughput_rows_per_sec": 0.0,
+      "memory_usage_mb": 0.0,
+      "file_size_mb": 0.01,
+      "saved_files": [
+        "data/raw/oracle/ACWINNER.csv",
+        "data/processed/real/ACWINNER.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-14T00:00:22.653769"
+    },
+    {
+      "table_name": "ACSHARES",
+      "full_name": "RWTXN_46.ACSHARES",
+      "rows_extracted": 273,
+      "expected_rows": 12000,
+      "columns": 17,
+      "duration_seconds": 1.14,
+      "throughput_rows_per_sec": 238.5,
+      "memory_usage_mb": 0.07,
+      "file_size_mb": 0.05,
+      "saved_files": [
+        "data/raw/oracle/ACSHARES.csv",
+        "data/processed/real/ACSHARES.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-14T00:00:23.821734"
+    },
+    {
+      "table_name": "RW_ORDER_ITEM",
+      "full_name": "RWTXN_46.RW_ORDER_ITEM",
+      "rows_extracted": 230282,
+      "expected_rows": 230282,
+      "columns": 75,
+      "duration_seconds": 177.7,
+      "throughput_rows_per_sec": 1295.9,
+      "memory_usage_mb": 426.39,
+      "file_size_mb": 65.51,
+      "saved_files": [
+        "data/raw/oracle/RW_ORDER_ITEM.csv",
+        "data/processed/real/RW_ORDER_ITEM.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-14T00:03:24.539011"
+    },
+    {
+      "table_name": "RW_ORDER_SUPPLIER",
+      "full_name": "RWTXN_46.RW_ORDER_SUPPLIER",
+      "rows_extracted": 96552,
+      "expected_rows": 96552,
+      "columns": 7,
+      "duration_seconds": 73.94,
+      "throughput_rows_per_sec": 1305.7,
+      "memory_usage_mb": 24.38,
+      "file_size_mb": 6.52,
+      "saved_files": [
+        "data/raw/oracle/RW_ORDER_SUPPLIER.csv",
+        "data/processed/real/RW_ORDER_SUPPLIER.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-14T00:04:38.745854"
+    },
+    {
+      "table_name": "RW_PURCHASE_ORDER",
+      "full_name": "RWTXN_46.RW_PURCHASE_ORDER",
+      "rows_extracted": 96552,
+      "expected_rows": 96552,
+      "columns": 51,
+      "duration_seconds": 74.98,
+      "throughput_rows_per_sec": 1287.7,
+      "memory_usage_mb": 126.1,
+      "file_size_mb": 23.69,
+      "saved_files": [
+        "data/raw/oracle/RW_PURCHASE_ORDER.csv",
+        "data/processed/real/RW_PURCHASE_ORDER.parquet"
+      ],
+      "status": "success",
+      "timestamp": "2025-08-14T00:05:54.663851"
+    }
+  ]
+}

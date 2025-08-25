@@ -1,0 +1,6 @@
+ClientID,FirstName,LastName,DateOfBirth,Address,City,State,ZipCode,Phone,Email,HouseholdSize,CreatedDate
+1,John,Smith,1985-03-15,123 Main St,Springfield,IL,62701,555-0101,john@email.com,3,2024-01-15
+2,Maria,Garcia,1992-07-22,456 Oak Ave,Riverside,CA,92503,555-0102,maria@email.com,4,2024-02-20
+3,Robert,Johnson,1978-11-05,789 Pine Rd,Lakewood,OH,44107,555-0103,robert@email.com,2,2024-01-30
+4,Lisa,Williams,1990-02-18,321 Elm St,Franklin,TN,37064,555-0104,lisa@email.com,5,2024-03-10
+5,David,Brown,1983-09-30,654 Cedar Dr,Madison,WI,53703,555-0105,david@email.com,1,2024-02-05

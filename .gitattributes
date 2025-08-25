@@ -1,0 +1,5 @@
+# Git LFS configuration for large data artifacts
+# Track only data files; source code stays in Git proper
+
+data/**/*.parquet filter=lfs diff=lfs merge=lfs -text
+data/**/*.csv     filter=lfs diff=lfs merge=lfs -text

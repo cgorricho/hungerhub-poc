@@ -1,0 +1,6 @@
+{
+  "network_tests": {
+    "choice_server": false,
+    "agency_server": false
+  }
+}

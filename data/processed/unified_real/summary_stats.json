@@ -1,0 +1,22 @@
+{
+  "generation_time": "2025-08-13T20:40:18.958965",
+  "data_source": "Real Oracle Data",
+  "datasets": {
+    "donations": {
+      "records": 0,
+      "date_range": "No data",
+      "unique_donors": 0
+    },
+    "organizations": {
+      "records": 0,
+      "choice_orgs": 0,
+      "agency_orgs": 0
+    },
+    "orders": {
+      "records": 0,
+      "procurement_orders": 0,
+      "total_value": 0,
+      "date_range": "No data"
+    }
+  }
+}

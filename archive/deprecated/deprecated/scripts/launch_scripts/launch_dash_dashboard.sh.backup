@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# HungerHub POC - Plotly Dash Dashboard Launch Script (CORRECT VERSION)
+echo "🍽️ Starting HungerHub POC Dashboard..."
+echo "📋 Original POC Specification: Oracle → Python → Plotly Dash"
+
+# Check if in virtual environment
+if [[ "$VIRTUAL_ENV" == "" ]]; then
+    echo "⚠️ No virtual environment detected. Activating venv..."
+    source venv/bin/activate
+fi
+
+# Check if real data exists
+if [ ! -f "data/processed/unified_real/donations.csv" ] || [ ! -f "data/processed/unified_real/organizations.csv" ]; then
+    echo "❌ Real Oracle data files not found. Running data extraction..."
+    python src/data_extraction/real_data_extractor.py
+    if [ $? -ne 0 ]; then
+        echo "❌ Data extraction failed. Exiting."
+        exit 1
+    fi
+    
+    python src/data_extraction/create_unified_real_data.py
+    if [ $? -ne 0 ]; then
+        echo "❌ Data unification failed. Exiting."
+        exit 1
+    fi
+fi
+
+echo "✅ Real Oracle data available"
+echo "🎯 3-Page Dashboard: Executive Summary | Donation Analytics | Agency Operations"
+echo ""
+echo "🌐 Dashboard will be available at: http://localhost:8050"
+echo "📊 Using real Oracle data with 7,500+ records"
+echo "⚠️ Use Ctrl+C to stop the dashboard"
+echo ""
+
+# Launch Dash dashboard (CORRECT per original POC plan)
+python src/dashboard/app.py
