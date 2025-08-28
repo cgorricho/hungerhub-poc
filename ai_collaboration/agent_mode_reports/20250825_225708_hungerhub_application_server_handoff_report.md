@@ -1,0 +1,503 @@
+# HungerHub Application & Server Handoff Report
+
+**Date:** August 25, 2025  
+**Time:** 22:57:08 UTC  
+**Report ID:** 20250825_225708  
+**Server:** TAGDataHungerHUB (Azure VM)  
+**Domain:** hungerhubdash.techbridge.org
+
+---
+
+## 🎯 Executive Summary
+
+This document provides comprehensive handoff documentation for the **HungerHub POC Application** and its complete **Ubuntu server environment**. The application has been successfully migrated to a production-ready configuration with SSL certificates, reverse proxy, and dual repository structure for ongoing development.
+
+### Key Assets Being Transferred
+- ✅ **Production Application:** hungerhubdash.techbridge.org (SSL-enabled)
+- ✅ **Complete Server Environment:** Ubuntu 24.04.2 LTS with full stack
+- ✅ **Two Git Repositories:** Development history + Active codebase
+- ✅ **SSL Certificate:** Valid until November 23, 2025
+- ✅ **Nginx Reverse Proxy:** Production-grade configuration
+- ✅ **Python/Anaconda Environment:** Full data science stack
+
+---
+
+## 🖥️ Server Infrastructure
+
+### System Specifications
+```
+Hostname: TAGDataHungerHUB
+OS: Ubuntu 24.04.2 LTS (Noble)
+Kernel: 6.11.0-1018-azure
+Architecture: x86_64
+CPU: Intel(R) Xeon(R) Platinum 8272CL @ 2.60GHz (4 cores)
+Memory: 16GB RAM
+Storage: 247GB SSD (8% used)
+Platform: Microsoft Azure VM
+```
+
+### Network Configuration
+- **Public URL:** https://hungerhubdash.techbridge.org
+- **Local Dash App:** http://127.0.0.1:8050
+- **Local Streamlit App:** http://127.0.0.1:8501
+- **SSH Port:** 22 (secured)
+- **HTTP/HTTPS:** 80/443 (nginx managed)
+
+---
+
+## 📁 Repository Structure
+
+### 1. Primary Development Repository
+```
+Location: /home/tagazureuser/hungerhub_poc/
+Repository: https://github.com/cgorricho/hungerhub-poc.git
+Size: 1.7GB
+Status: Active development, 6 uncommitted changes
+Purpose: Production application code
+```
+
+**Key Directories:**
+- `src/dashboard/dash/` - Dash application code
+- `src/dashboard/streamlit/` - Streamlit application code  
+- `data/` - Data files and Oracle extractions
+- `notebooks/` - Jupyter analysis notebooks
+- `docs/` - Technical documentation
+- `ai_collaboration/` - Agent Mode reports and logs
+- `config/` - Environment and configuration files
+- `deployment/` - Production deployment scripts
+
+### 2. Historical Repository
+```
+Location: /home/tagazureuser/cgorr/
+Repository: https://github.com/cgorricho/TAG-TB-Purpose-Project.git
+Size: 1.7GB
+Status: Archive with complete backup
+Purpose: Historical reference and backup
+```
+
+**Contains:**
+- Complete development history (44 commits)
+- Full backup in: `2week_poc_execution/hungerhub_poc_backup_20250825_164602/`
+- Commit history CSV: `github_complete_commit_history_20250825_191413.csv`
+
+---
+
+## 🔧 Software Environment
+
+### Python & Data Science Stack
+```
+Python Version: 3.13.5
+Conda Version: 25.5.1
+Environment: /home/tagazureuser/anaconda3 (base)
+Virtual Environment: /home/tagazureuser/hungerhub_poc/venv/
+```
+
+**Key Python Packages:**
+- `dash` - Web application framework
+- `streamlit` - Alternative dashboard framework  
+- `plotly` - Interactive visualizations
+- `pandas` - Data manipulation
+- `sqlalchemy` - Database connectivity
+- `cx-Oracle` - Oracle database driver
+- `jupyter` - Notebook environment
+- `altair` - Statistical visualizations
+
+### Web Server Configuration
+```
+Web Server: nginx/1.24.0
+Status: Active and running (18+ hours uptime)
+Configuration: /etc/nginx/sites-available/hungerhubdash.techbridge.org
+SSL Provider: Let's Encrypt (Certbot)
+Certificate Expires: November 23, 2025 (89 days remaining)
+```
+
+---
+
+## 🔐 Security Configuration
+
+### SSL Certificate
+```
+Domain: hungerhubdash.techbridge.org
+Type: ECDSA
+Serial: 50eed745b2bcf1675099deac7ead42f4641
+Expiry: November 23, 2025
+Auto-renewal: Configured via certbot.timer
+```
+
+### Firewall Rules (UFW)
+```
+Status: Active
+Allowed Services:
+  - Nginx Full (HTTP/HTTPS)
+  - SSH (Port 22)
+  - IPv6 enabled for all rules
+```
+
+### User Access
+```
+Primary User: tagazureuser (uid: 1000)
+Groups: sudo, adm, cdrom, dip, lxd  
+SSH Access: Key-based authentication configured
+SSH Directory: ~/.ssh/ (authorized_keys present)
+Shell: /bin/bash
+```
+
+---
+
+## 🚀 Application Deployment
+
+### Current Running Processes
+```
+Dash Application:
+  - PID: 2015025
+  - Command: python -m src.dashboard.dash.enhanced_app
+  - Port: 8050
+  - Status: Active (5+ hours runtime)
+  - Memory: 690MB
+
+Streamlit Application:
+  - PID: 2024995  
+  - Command: streamlit run enhanced_app.py --server.port 8501
+  - Port: 8501
+  - Status: Active (5+ hours runtime)
+  - Memory: 500MB
+```
+
+### Startup Scripts
+**Dash Application:**
+```bash
+./run_dash_app.sh
+# Includes virtual environment activation
+# Environment variable setup
+# Diagnostic output
+# Auto-launches on port 8050
+```
+
+**Streamlit Application:**
+```bash  
+./run_streamlit_app.sh
+# Includes port conflict detection
+# Cache management
+# Logging configuration
+# Auto-launches on port 8501
+```
+
+### Persistent Session Management (tmux)
+
+**Enhanced Startup Script with tmux Support:**
+```bash
+./run_dash_app.sh
+# Creates persistent tmux session: 'hungerhub-dash'
+# Includes virtual environment activation
+# Environment variable setup
+# Diagnostic output
+# Auto-launches on port 8050
+# Survives terminal disconnections
+```
+
+**tmux Session Operations:**
+```bash
+# Start application in persistent session
+./run_dash_app.sh
+
+# Detach from session (keeps app running)
+Ctrl+b, then d
+
+# Reattach to existing session
+./run_dash_app.sh
+# OR
+tmux attach-session -t hungerhub-dash
+
+# List active sessions
+tmux list-sessions
+
+# Kill persistent session
+tmux kill-session -t hungerhub-dash
+```
+
+**Benefits:**
+- Application persists across SSH disconnections
+- Background operation support
+- Easy monitoring and log access
+- Simplified deployment workflow
+- Enhanced server stability
+
+
+---
+
+## 🔗 Nginx Reverse Proxy Configuration
+
+### Primary Configuration
+```nginx
+# File: /etc/nginx/sites-available/hungerhubdash.techbridge.org
+
+server {
+    server_name hungerhubdash.techbridge.org;
+    client_max_body_size 100M;
+    
+    # Proxy to Dash app (port 8050)
+    location / {
+        proxy_pass http://127.0.0.1:8050;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_cache_bypass $http_upgrade;
+        proxy_read_timeout 86400;
+    }
+    
+    # WebSocket support for Dash callbacks
+    location /_dash-update-component {
+        proxy_pass http://127.0.0.1:8050;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        # Additional headers...
+    }
+    
+    # SSL configuration (Let's Encrypt)
+    listen 443 ssl;
+    ssl_certificate /etc/letsencrypt/live/hungerhubdash.techbridge.org/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/hungerhubdash.techbridge.org/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+}
+
+# HTTP redirect to HTTPS
+server {
+    if ($host = hungerhubdash.techbridge.org) {
+        return 301 https://$host$request_uri;
+    }
+    listen 80;
+    server_name hungerhubdash.techbridge.org;
+    return 404;
+}
+```
+
+---
+
+## 📋 Maintenance & Operations
+
+### Automated Tasks
+```
+SSL Certificate Renewal: certbot.timer (every 12 hours)
+Log Rotation: logrotate.timer (daily at midnight)
+System Updates: update-notifier-download.timer (daily)
+```
+
+### Log Files
+```
+Nginx Access: /var/log/nginx/hungerhubdash.access.log
+Nginx Error: /var/log/nginx/hungerhubdash.error.log
+Application Logs: /home/tagazureuser/hungerhub_poc/logs/
+```
+
+### Key Configuration Files
+```
+Environment Variables: /home/tagazureuser/hungerhub_poc/.env
+Nginx Config: /etc/nginx/sites-available/hungerhubdash.techbridge.org
+SSL Certificates: /etc/letsencrypt/live/hungerhubdash.techbridge.org/
+Python Requirements: /home/tagazureuser/hungerhub_poc/requirements.txt
+```
+
+---
+
+## 🛠️ Handoff Procedures
+
+### Immediate Actions Required
+1. **SSH Access Transfer**
+   - Add customer's public SSH key to `~/.ssh/authorized_keys`
+   - Test SSH connectivity
+   - Document sudo access requirements
+
+2. **Domain Management**
+   - Transfer DNS control for `hungerhubdash.techbridge.org`
+   - Update domain registrar contact information
+   - Verify SSL certificate auto-renewal
+
+3. **Repository Access**
+   - Transfer GitHub repository ownership
+   - Update repository collaborators
+   - Document Git workflow and branching strategy
+
+### Ongoing Maintenance
+
+**Daily:**
+- Monitor application logs for errors
+- Verify both Dash and Streamlit apps are responsive
+- Check system resource usage
+
+**Weekly:**
+- Review nginx access logs for traffic patterns
+- Monitor SSL certificate status
+- Update Python packages if needed
+
+**Monthly:**
+- Apply Ubuntu security updates
+- Review and rotate log files
+- Backup critical data and configurations
+
+### Emergency Procedures
+
+**Application Restart:**
+```bash
+# Method 1: Using tmux session management (Recommended)
+tmux kill-session -t hungerhub-dash  # Stop tmux session
+./run_dash_app.sh                    # Restart in new tmux session
+
+# Method 2: Direct process management
+pkill -f "python -m src.dashboard.dash.enhanced_app"
+pkill -f "streamlit run"
+
+# Restart applications
+cd /home/tagazureuser/hungerhub_poc
+./run_dash_app.sh &
+./run_streamlit_app.sh &
+
+# Method 3: Emergency tmux session recovery
+tmux list-sessions                   # Check existing sessions
+tmux attach-session -t hungerhub-dash  # Reattach if session exists
+# Or force restart if session is unresponsive:
+tmux kill-server                     # Nuclear option - kills all tmux sessions
+./run_dash_app.sh                    # Start fresh
+```
+
+
+**Nginx Restart:**
+```bash
+sudo systemctl restart nginx
+sudo systemctl status nginx
+```
+
+**SSL Certificate Issues:**
+```bash
+sudo certbot certificates
+sudo certbot renew --dry-run
+sudo certbot renew --force-renewal
+```
+
+---
+
+## 📊 Application Features
+
+### Dash Application (Primary)
+- **URL:** https://hungerhubdash.techbridge.org
+- **Features:** 
+  - Interactive food insecurity analytics
+  - Geographic choropleth mapping  
+  - Multi-tab dashboard interface
+  - Real-time Oracle database connectivity
+  - Export capabilities for reports and data
+
+### Streamlit Application (Secondary)  
+- **URL:** http://127.0.0.1:8501 (local access)
+- **Features:**
+  - Alternative dashboard interface
+  - Simplified analytics views
+  - Development and testing interface
+  - Jupyter notebook integration
+
+---
+
+## 📈 Performance Metrics
+
+### Current Resource Usage
+```
+CPU Usage: ~4% average
+Memory Usage: 6.0GB / 16GB (38%)
+Disk Usage: 19GB / 247GB (8%)
+Network: Stable HTTPS traffic
+Application Response Time: <500ms average
+```
+
+### Capacity Planning
+- **Current Load:** Development/Demo level
+- **Scaling Potential:** Can handle moderate production traffic
+- **Recommended Monitoring:** CPU, memory, disk I/O
+- **Growth Considerations:** Database connection pooling for high traffic
+
+---
+
+## 🔍 Troubleshooting Guide
+
+### Common Issues
+
+**Application Won't Start:**
+1. Check virtual environment activation
+2. Verify Python dependencies: `pip list`
+3. Check port availability: `lsof -i :8050`
+4. Review application logs in `/home/tagazureuser/hungerhub_poc/logs/`
+
+**SSL Certificate Problems:**
+1. Check certificate expiry: `sudo certbot certificates`
+2. Test renewal: `sudo certbot renew --dry-run`
+3. Check nginx configuration: `sudo nginx -t`
+
+**Database Connectivity Issues:**
+1. Verify `.env` file contains correct Oracle credentials
+2. Test database connection from Python
+3. Check network connectivity to Oracle server
+
+### Contact Information
+- **Original Developer:** Carlos Gorricho (cgorricho@techbridgeanalytics.com)
+- **GitHub Repositories:** 
+  - Active: https://github.com/cgorricho/hungerhub-poc.git
+  - Archive: https://github.com/cgorricho/TAG-TB-Purpose-Project.git
+- **Domain Provider:** [Document domain registrar details]
+- **SSL Provider:** Let's Encrypt (automated)
+
+---
+
+## ✅ Handoff Checklist
+
+### Technical Transfer
+- [ ] SSH access transferred to customer
+- [ ] GitHub repository ownership transferred
+- [ ] Domain DNS management transferred
+- [ ] SSL certificate monitoring setup
+- [ ] Documentation reviewed and understood
+
+### Knowledge Transfer
+- [ ] Application architecture explained
+- [ ] Deployment procedures demonstrated  
+- [ ] Monitoring and maintenance procedures documented
+- [ ] Emergency contact information provided
+- [ ] Backup and recovery procedures established
+
+### Legal/Administrative
+- [ ] Server ownership transferred (Azure account)
+- [ ] Domain registration transferred
+- [ ] Repository licenses reviewed
+- [ ] Support agreements defined
+- [ ] Documentation intellectual property transferred
+
+---
+
+## 📎 Appendices
+
+### A. Complete File Structure
+[Detailed directory tree of both repositories]
+
+### B. Environment Variables
+[Complete list of required environment variables]
+
+### C. Database Schema
+[Oracle database connection details and table structures]
+
+### D. API Documentation
+[Internal API endpoints and usage]
+
+### E. Backup Procedures
+[Complete backup and recovery documentation]
+
+---
+
+**Report Generated:** 2025-08-25T22:57:08.764945  
+**Server Time:** 2025-08-25 22:57:08 UTC  
+**Generated By:** Agent Mode Assistant  
+**Version:** 1.0  
+
+*This document contains sensitive configuration information. Store securely and limit access to authorized personnel only.*
